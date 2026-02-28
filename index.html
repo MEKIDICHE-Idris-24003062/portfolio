@@ -37,11 +37,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/tout.css">
 </head>
 
 <body class="bg-gray-50 text-gray-900 dark:bg-dark-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-50 dark:bg-dark-900 transition-all duration-700 ease-in-out">
+        <div class="relative overflow-hidden flex justify-center items-center">
+            <h1 class="loader-text text-5xl md:text-8xl font-black uppercase tracking-widest">idrismeki</h1>
+        </div>
+    </div>
 
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -353,225 +362,158 @@
                     Mon GitHub <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
-            <div class="space-y-24">
-                <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 aspect-video">
-                            <img src="img/DashMed.png" alt="DashMed" class="w-full h-full object-cover">
-                        </div>
+            <!-- Projects Grid (Main Page) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10" data-aos="fade-up">
+                <!-- Card 1 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="0">
+                    <div class="aspect-video relative overflow-hidden rounded-t-2xl">
+                        <img src="img/DashMed.png" alt="DashMed"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-full md:w-1/2 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-primary font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-primary font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-desktop"></i> Application Desktop
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">DashMed</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Un dashboard médical complet conçu pour simplifier la gestion des patients. J'ai voulu créer
-                            une interface qui soit non seulement fonctionnelle mais aussi apaisante visuellement pour le
-                            personnel médical.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">DashMed</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Un dashboard médical complet conçu pour simplifier la gestion des patients.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">PHP</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">SQL</span>
-                        </div>
-                        <a href="https://dashmed.alwaysdata.net/?page=homepage" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Voir le site <i class="ph ph-arrow-right ml-2"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <img src="img/SuperBomberman.png" alt="Bomberman Clone" class="w-full h-full object-contain">
+
+                <!-- Card 2 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-red-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="1">
+                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
+                        <img src="img/SuperBomberman.png" alt="Bomberman Clone"
+                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-full md:w-1/2 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-red-500 font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-red-500 font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-game-controller"></i> Jeu Vidéo
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Bomberman Clone</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe : gestion
-                            des collisions, IA des ennemis et génération procédurale de niveaux. Un vrai challenge
-                            technique.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bomberman Clone</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Java</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">JavaFX</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Algorithmique</span>
-                        </div>
-                        <a href="https://github.com/BOUDHIB-Mohame-Amine-24006551/SuperBomberman" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Voir le site <i class="ph ph-arrow-right ml-2"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13" class="w-full h-full object-contain">
+
+                <!-- Card 3 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="2">
+                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
+                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13"
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-full md:w-1/2 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-green-500 font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-green-500 font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-globe"></i> E-commerce & Web
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Direct Rénove 13</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Site vitrine professionnel pour une entreprise de rénovation. J'ai mis l'accent sur une
-                            navigation fluide et un design épuré, tout en optimisant les performances pour une
-                            expérience utilisateur optimale.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Direct Rénove 13</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Site vitrine professionnel pour une entreprise de rénovation.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">HTML/CSS</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">JS</span>
-                        </div>
-                        <a href="https://directrevnov13.alwaysdata.net/" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Visiter le site <i class="ph ph-arrow-right ml-2"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 aspect-video">
-                            <div
-                                class="absolute inset-0 bg-gray-900 opacity-90 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                <i
-                                    class="ph ph-paint-brush-broad text-8xl text-purple-500 drop-shadow-lg transform group-hover:scale-105 transition-transform duration-500"></i>
-                            </div>
-                        </div>
+
+                <!-- Card 4 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-purple-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="3">
+                    <div
+                        class="aspect-video relative overflow-hidden rounded-t-2xl bg-gray-900 flex items-center justify-center">
+                        <i
+                            class="ph ph-paint-brush-broad text-6xl text-purple-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <div class="w-full md:w-1/2 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-purple-500 font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-purple-500 font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-pen-nib"></i> Branding & Design
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">MAJIK Esports</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Au-delà du code, j'aime créer des identités visuelles fortes. Pour MAJIK, nous avons conçu
-                            tout l’univers graphique : logo, animations… afin d’assurer une cohérence totale. Plusieurs
-                            classes ont travaillé sur ce projet et notre groupe a remporté le concours de la meilleure
-                            identité visuelle. Nous avons donc ensuite organisé le tournoi. Nous avons réussi à obtenir
-                            différents sponsors pour l’évènement. Je vous laisse découvrir plus en détail notre travail
-                            sur notre Instagram.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">MAJIK Esports</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Création d'identités visuelles fortes. Logos, animations et organisation d'un tournoi.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Photoshop</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Communication</span>
-                        </div>
-                        <a href="https://majik-esports.netlify.app/" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            le lien du site web <i class="ph ph-arrow-right ml-2"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 aspect-video">
-                            <img src="img/nas.png" alt="Nas" class="w-full h-full object-cover">
-                        </div>
+
+                <!-- Card 5 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-indigo-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="4">
+                    <div class="aspect-video relative overflow-hidden rounded-t-2xl">
+                        <img src="img/nas.png" alt="Nas"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-full md:w-1/2 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-indigo-500 font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-indigo-500 font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-ordinateur"></i> Nas
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Création d'un Nas</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé des
-                            données. Utilisation de TrueNas pour une interface intuitive et CasaOs pour la gestion des
-                            applications.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Création d'un Nas</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Tailscale</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">TrueNas</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">CasaOs</span>
-                        </div>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-up">
-                    <div class="w-full md:w-1/2 group">
-                        <img src="img/figma_aix.png" alt="Figma Aix" class="w-full h-full object-contain">
+
+                <!-- Card 6 -->
+                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-amber-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
+                    data-index="5">
+                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
+                        <img src="img/figma_aix.png" alt="Figma Aix"
+                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-full md:w-1/100 space-y-6">
+                    <div class="p-6">
                         <div
-                            class="flex items-center gap-3 text-amber-600 dark:text-amber-500 font-semibold tracking-wider text-sm uppercase">
+                            class="flex items-center gap-2 text-amber-600 dark:text-amber-500 font-semibold tracking-wider text-xs uppercase mb-3">
                             <i class="ph ph-figma-logo"></i> UX/UI & Design
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white">Circuit Touristique Aix</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Circuit Touristique Aix</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
                             Conception en groupe d'une interface d'application inclusive pour découvrir Aix-en-Provence.
-                            Le projet se concentre sur l'accessibilité (PMR, seniors, familles) et propose des
-                            itinéraires personnalisés (culturel, artistique, dynamique) avec une navigation optimisée.
                         </p>
-
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Figma</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Prototypage</span>
-                            <span
-                                class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">Accessibilité</span>
-                        </div>
-
-                        <a href="https://www.figma.com/proto/Gi9g98YJV9s1erSJUP5i7G/S105--%7C-BARBERIS---HELALI---MEKIDICHE---RATIANANAHARY---STEFANOVITCH---WATRIPONT--Copy-?node-id=4001-851&starting-point-node-id=89%3A83"
-                            target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Voir la maquette Figma <i class="ph ph-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="pt-12 border-t border-gray-200 dark:border-gray-700">
-                    <h3 class="text-2xl font-bold mb-8 text-center">Autres Expériences Web</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
-                            data-aos="fade-up" data-aos-delay="100">
-                            <img src="img/Valorant.png" alt="Valorant" class="w-20 h-20">
-                            <div>
-                                <h4 class="text-lg font-bold mb-2">Fan Site Valorant</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Exploration des animations CSS
-                                    et des interactions dynamiques.</p>
-                                <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
-                            </div>
-                            <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
-                                class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                                Le site</i>
-                            </a>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
-                            data-aos="fade-up" data-aos-delay="100">
-                            <img src="img/tester_les_pixel.png" alt="Valorant" class="w-20 h-20">
-                            <div>
-                                <h4 class="text-lg font-bold mb-2">Site testeur de pixel</h4>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Création d'un site pour pouvoir
-                                    tester les écrant qui ma aider pour la répartion d'écran d'ordinateur</p>
-                                <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
-                            </div>
-                            <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
-                                class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                                Le site</i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="mt-8 pt-12 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="text-2xl font-bold mb-8 text-center">Autres Expériences Web</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <img src="img/Valorant.png" alt="Valorant" class="w-20 h-20">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Fan Site Valorant</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Exploration des animations CSS
+                                et des interactions dynamiques.</p>
+                            <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
+                        </div>
+                        <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
+                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
+                            Le site</i>
+                        </a>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <img src="img/tester_les_pixel.png" alt="Valorant" class="w-20 h-20">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Site testeur de pixel</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Création d'un site pour pouvoir
+                                tester les écrant qui ma aider pour la répartion d'écran d'ordinateur</p>
+                            <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
+                        </div>
+                        <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
+                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
+                            Le site</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
     <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-900">
@@ -643,7 +585,246 @@
             © Idris Mekidiche.
         </p>
     </footer>
+    <!-- Fullscreen Swiper Lightbox -->
+    <div id="project-modal"
+        class="fixed inset-0 z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="absolute inset-0 bg-white/95 dark:bg-[#0f172a]/98 backdrop-blur-xl transition-opacity"
+            id="modal-backdrop"></div>
+
+        <button id="modal-close"
+            class="absolute top-4 right-4 md:top-8 md:right-8 z-[210] p-3 md:p-4 bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700 text-gray-900 dark:text-white rounded-full transition-colors">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+
+        <div class="w-full h-full relative z-[205] py-12 md:py-16 flex items-center" id="modal-content">
+            <div class="swiper projects-swiper w-full max-w-7xl mx-auto !px-4 md:!px-20 h-full max-h-[900px]">
+                <div class="swiper-wrapper flex items-center">
+
+                    <!-- Slide 1 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="img/DashMed.png" alt="DashMed"
+                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl rounded-2xl border border-gray-200 dark:border-gray-700">
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-primary bg-primary/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-primary/20">
+                                <i class="ph ph-desktop"></i> Application Desktop
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">DashMed</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                                Un dashboard médical complet conçu pour simplifier la gestion des patients. J'ai voulu
+                                créer une interface qui soit non seulement fonctionnelle mais aussi apaisante
+                                visuellement pour le personnel médical.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">PHP</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">SQL</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://dashmed.alwaysdata.net/?page=homepage" target="_blank"
+                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                                    Voir le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="img/SuperBomberman.png" alt="Bomberman Clone"
+                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-red-500 bg-red-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-red-500/20">
+                                <i class="ph ph-game-controller"></i> Jeu Vidéo
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Bomberman Clone
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                                Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe :
+                                gestion des collisions, IA des ennemis et génération procédurale de niveaux. Un vrai
+                                challenge technique.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Java</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">JavaFX</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Algorithmique</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/BOUDHIB-Mohame-Amine-24006551/SuperBomberman"
+                                    target="_blank"
+                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                                    Voir le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="img/DirectRénove13.png" alt="Direct Rénove 13"
+                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-green-500 bg-green-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-green-500/20">
+                                <i class="ph ph-globe"></i> E-commerce & Web
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Direct Rénove 13
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                                Site vitrine professionnel pour une entreprise de rénovation. J'ai mis l'accent sur une
+                                navigation fluide et un design épuré, tout en optimisant les performances pour une
+                                expérience utilisateur optimale.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">HTML/CSS</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">JS</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://directrevnov13.alwaysdata.net/" target="_blank"
+                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                                    Visiter le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <div
+                                class="w-full max-w-md aspect-video bg-gray-900 rounded-2xl flex items-center justify-center drop-shadow-2xl border border-gray-700">
+                                <i class="ph ph-paint-brush-broad text-8xl text-purple-500"></i>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-purple-500 bg-purple-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-purple-500/20">
+                                <i class="ph ph-pen-nib"></i> Branding & Design
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">MAJIK Esports</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm xl:text-lg leading-relaxed max-w-xl">
+                                Au-delà du code, j'aime créer des identités visuelles fortes. Pour MAJIK, nous avons
+                                conçu tout l’univers graphique : logo, animations afin d’assurer une cohérence totale.
+                                Plusieurs classes ont travaillé sur ce projet et notre groupe a remporté le concours de
+                                la meilleure identité visuelle. Nous avons donc ensuite organisé le tournoi.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Photoshop</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Communication</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://majik-esports.netlify.app/" target="_blank"
+                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                                    Lien du site web <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="img/nas.png" alt="Nas"
+                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl rounded-2xl border border-gray-200 dark:border-gray-700">
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-indigo-500 bg-indigo-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-indigo-500/20">
+                                <i class="ph ph-ordinateur"></i> Nas
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Création d'un Nas
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                                Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé des
+                                données. Utilisation de TrueNas pour une interface intuitive et CasaOs pour la gestion
+                                des applications.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Tailscale</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">TrueNas</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">CasaOs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div
+                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="img/figma_aix.png" alt="Figma Aix"
+                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6 text-left">
+                            <div
+                                class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-500 bg-amber-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-amber-500/20">
+                                <i class="ph ph-figma-logo"></i> UX/UI & Design
+                            </div>
+                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Circuit
+                                Touristique Aix</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm xl:text-lg leading-relaxed max-w-xl">
+                                Conception en groupe d'une interface d'application inclusive pour découvrir
+                                Aix-en-Provence. Le projet se concentre sur l'accessibilité (PMR, seniors, familles) et
+                                propose des itinéraires personnalisés (culturel, artistique, dynamique) avec une
+                                navigation optimisée.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Figma</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Prototypage</span>
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Accessibilité</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://www.figma.com/proto/Gi9g98YJV9s1erSJUP5i7G/S105--%7C-BARBERIS---HELALI---MEKIDICHE---RATIANANAHARY---STEFANOVITCH---WATRIPONT--Copy-?node-id=4001-851&starting-point-node-id=89%3A83"
+                                    target="_blank"
+                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                                    Voir la maquette <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-0 pb-4"></div>
+                <!-- Navigation -->
+                <div
+                    class="swiper-button-prev !text-primary !w-14 !h-14 bg-white dark:bg-[#1e293b] rounded-full shadow-lg border border-gray-100 dark:border-gray-700 !left-0 md:!left-4 after:!text-2xl shadow-blue-500/20">
+                </div>
+                <div
+                    class="swiper-button-next !text-primary !w-14 !h-14 bg-white dark:bg-[#1e293b] rounded-full shadow-lg border border-gray-100 dark:border-gray-700 !right-0 md:!right-4 after:!text-2xl shadow-blue-500/20">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/tout.js"></script>
 </body>
 

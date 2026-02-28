@@ -1,16 +1,20 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: #0f172a;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #334155;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #3b82f6;
 }
@@ -23,4 +27,58 @@ body {
 
 html.light .glass-nav {
     background: rgba(255, 255, 255, 0.85);
+}
+
+/* Preloader styles */
+.loader-text {
+    /* Create a gradient: transparent top, primary color bottom */
+    background: linear-gradient(to top, #3b82f6 50%, transparent 50%);
+    background-size: 100% 200%;
+    /* Start at top so transparent shows */
+    background-position: 100% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 2px #d1d5db;
+    /* Outline color in light mode */
+    animation: fillText 2s ease-in-out forwards;
+}
+
+html.dark .loader-text {
+    -webkit-text-stroke: 2px #475569;
+    /* Outline color in dark mode */
+}
+
+@keyframes fillText {
+    0% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.preloader-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+}
+
+/* Modal Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
 }
