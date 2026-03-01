@@ -357,9 +357,6 @@ html.dark .nav__mobile-link:hover {
     font-weight: 700;
 }
 
-/* ============================================
-   HERO SECTION — VAN HOLTZ INSPIRED
-   ============================================ */
 .hero--vanholtz {
     position: relative;
     min-height: 100vh;
@@ -374,7 +371,6 @@ html.dark .hero--vanholtz {
     background: linear-gradient(135deg, #1e3a8a 0%, #312e81 50%, #1e1b4b 100%);
 }
 
-/* ---- Typography background ---- */
 .hero__typo-bg {
     position: absolute;
     inset: 0;
@@ -413,10 +409,6 @@ html.dark .hero__typo-name {
     color: rgba(0, 0, 0, 0.4);
 }
 
-.hero__typo-name--outline {
-    color: transparent;
-}
-
 html.dark .hero__typo-name--outline {
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.15);
 }
@@ -427,7 +419,6 @@ html.dark .hero__typo-name--outline {
     -webkit-text-stroke: 0 !important;
 }
 
-/* ---- Hover Preview Card ---- */
 .hover-preview {
     position: fixed;
     top: 0;
@@ -438,7 +429,6 @@ html.dark .hero__typo-name--outline {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     padding: 1rem;
     pointer-events: none;
-    /* Mouse passes through so it doesn't block hover */
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.9);
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -515,7 +505,6 @@ html.dark .hover-preview__meta {
     letter-spacing: 0.05em;
 }
 
-/* ---- Identity block (bottom-left) ---- */
 .hero__identity {
     position: absolute;
     bottom: 2.5rem;
@@ -580,7 +569,7 @@ html.dark .hover-preview__meta {
     font-weight: 600;
 }
 
-/* ---- Side links (bottom-right) ---- */
+
 .hero__side-links {
     position: absolute;
     bottom: 2.5rem;
@@ -631,7 +620,6 @@ html.dark .hover-preview__meta {
     color: #fde68a;
 }
 
-/* Scroll cue */
 .hero__scroll-cue {
     position: absolute;
     bottom: 2.5rem;
@@ -663,7 +651,6 @@ html.dark .hover-preview__meta {
     }
 }
 
-/* ---- Van Holtz hero mobile ---- */
 @media (max-width: 767px) {
     .hero__identity {
         bottom: 6rem;
@@ -700,9 +687,6 @@ html.dark .hover-preview__meta {
     }
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
 .about {
     padding: 5rem 0;
     background-color: transparent;
@@ -807,9 +791,7 @@ html.dark .about__hobby-card {
     transition: transform 0.5s;
 }
 
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
+
 .skills {
     padding: 5rem 0;
     background-color: transparent;
@@ -907,7 +889,7 @@ html.dark .skills__card {
     height: 1.5rem;
 }
 
-/* Tools tags */
+
 .skills__tags {
     display: flex;
     flex-wrap: wrap;
@@ -925,7 +907,6 @@ html.dark .skills__tag {
     background-color: #374151;
 }
 
-/* Soft skills */
 .skills__soft-skills {
     margin-top: 1rem;
     padding-top: 1rem;
@@ -962,9 +943,6 @@ html.dark .skills__soft-tag {
     color: #4ade80;
 }
 
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
 .projects {
     padding: 6rem 0;
     background-color: transparent;
@@ -1008,7 +986,6 @@ html.dark .projects {
     transform: translateX(4px);
 }
 
-/* Project cards grid */
 .projects__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1044,7 +1021,6 @@ html.dark .project-card {
     transform: scale(1.1);
 }
 
-/* Border hover color variants */
 .project-card--blue:hover {
     border-color: #3b82f6;
 }
@@ -1176,7 +1152,6 @@ html.dark .project-card__desc {
     color: #9ca3af;
 }
 
-/* Other experiences */
 .projects__other {
     margin-top: 2rem;
     padding-top: 3rem;
@@ -1263,9 +1238,6 @@ html.dark .projects__other-card p {
     color: #60a5fa;
 }
 
-/* ============================================
-   EXPERIENCE / TIMELINE SECTION
-   ============================================ */
 .experience {
     padding: 5rem 0;
     background-color: transparent;
@@ -1393,9 +1365,6 @@ html.dark .timeline__content-desc {
     color: #9ca3af;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
 .footer {
     padding: 2rem 0;
     background-color: transparent;
@@ -1413,9 +1382,6 @@ html.dark .footer {
     font-size: 0.875rem;
 }
 
-/* ============================================
-   PROJECT MODAL / LIGHTBOX
-   ============================================ */
 .modal {
     position: fixed;
     inset: 0;
@@ -1489,7 +1455,6 @@ html.dark .modal__close:hover {
     height: 100%;
 }
 
-/* Swiper slide */
 .modal__slide {
     display: flex;
     flex-direction: column;
@@ -1674,9 +1639,18 @@ html.dark .modal__slide-tag {
     transform: translateY(-4px);
 }
 
-/* Swiper nav/pagination overrides */
 .swiper-pagination {
     padding-bottom: 1rem;
+}
+
+html.dark .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.4;
+}
+
+html.dark .swiper-pagination-bullet-active {
+    background: #3b82f6;
+    opacity: 1;
 }
 
 .swiper-button-prev,
@@ -1718,7 +1692,6 @@ html.dark .swiper-button-next:hover {
     right: 0.5rem !important;
 }
 
-/* Modal scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
@@ -1736,9 +1709,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
     background: #475569;
 }
 
-/* ============================================
-   RESPONSIVE - TABLET (md: 768px)
-   ============================================ */
 @media (min-width: 768px) {
 
     .container {
@@ -1757,7 +1727,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         font-size: 5rem;
     }
 
-    /* Nav */
     .nav__mobile-controls {
         display: none;
     }
@@ -1770,9 +1739,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         display: none !important;
     }
 
-    /* Hero — sizes handled by clamp() */
-
-    /* About */
     .about__grid {
         flex-direction: row;
     }
@@ -1785,12 +1751,10 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         width: 66%;
     }
 
-    /* Skills */
     .skills__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Projects */
     .projects__github-link {
         display: inline-flex;
     }
@@ -1807,7 +1771,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Modal */
     .modal__close {
         top: 2rem;
         right: 2rem;
@@ -1834,7 +1797,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         right: 1.5rem !important;
     }
 
-    /* Timeline */
     .timeline::before {
         left: 50%;
         transform: translateX(-50%);
@@ -1865,9 +1827,6 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
     }
 }
 
-/* ============================================
-   RESPONSIVE - DESKTOP (lg: 1024px)
-   ============================================ */
 @media (min-width: 1024px) {
 
     .container {
@@ -1878,19 +1837,14 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
         padding: 0 2rem;
     }
 
-    /* Hero - mobile adjustments handled inline via clamp() */
-
-    /* Skills */
     .skills__grid {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    /* Projects */
     .projects__grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Modal slide */
     .modal__slide {
         flex-direction: row;
     }
@@ -1905,18 +1859,12 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
     }
 }
 
-/* ============================================
-   RESPONSIVE - XL (1280px)
-   ============================================ */
 @media (min-width: 1280px) {
     .modal__slide-desc--sm {
         font-size: 1.125rem;
     }
 }
 
-/* ============================================
-   HIDDEN UTILITY
-   ============================================ */
 .hidden {
     display: none !important;
 }
