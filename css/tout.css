@@ -415,7 +415,6 @@ html.dark .hero__typo-name {
 
 .hero__typo-name--outline {
     color: transparent;
-    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
 }
 
 html.dark .hero__typo-name--outline {
@@ -564,7 +563,6 @@ html.dark .hover-preview__meta {
 }
 
 .hero__identity-nav-link {
-    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
     transition: color 0.2s;
     text-transform: lowercase;
@@ -614,7 +612,6 @@ html.dark .hover-preview__meta {
 }
 
 .hero__side-link {
-    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
     transition: color 0.2s;
     text-transform: lowercase;

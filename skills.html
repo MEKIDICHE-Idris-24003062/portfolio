@@ -7,10 +7,286 @@
     <title>Compétences — Idris Mekidiche</title>
     <meta name="description"
         content="Les compétences techniques d'Idris Mekidiche : Front-end, Back-end, Logiciel et Outils.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/tout.css">
+    <style>
+        /* Advanced Glassmorphism Skills Styles */
+        .skills-section {
+            position: relative;
+            padding: 120px 0 100px;
+            overflow: hidden;
+        }
+
+        /* Abstract glowing background blobs */
+        .skills-bg-glow {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            top: -10%;
+            right: -10vw;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .skills-bg-glow-2 {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            bottom: 5%;
+            left: -15vw;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        html.dark .skills-bg-glow {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        html.dark .skills-bg-glow-2 {
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 2;
+            position: relative;
+        }
+
+        .m-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            z-index: 2;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Modern Glass Card */
+        .m-skill-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        html.dark .m-skill-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .m-skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .m-skill-card--purple::before {
+            background: #a855f7;
+        }
+
+        .m-skill-card--red::before {
+            background: #ef4444;
+        }
+
+        .m-skill-card--green::before {
+            background: #10b981;
+        }
+
+        .m-skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        html.dark .m-skill-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .m-skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .m-skill-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .m-skill-icon-wrap {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        html.dark .m-skill-icon-wrap {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .m-skill-card--purple .m-skill-icon-wrap {
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+        }
+
+        html.dark .m-skill-card--purple .m-skill-icon-wrap {
+            background: rgba(168, 85, 247, 0.2);
+        }
+
+        .m-skill-card--red .m-skill-icon-wrap {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        html.dark .m-skill-card--red .m-skill-icon-wrap {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .m-skill-card--green .m-skill-icon-wrap {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        html.dark .m-skill-card--green .m-skill-icon-wrap {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .m-skill-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .m-skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .m-skill-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .m-skill-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .m-skill-item img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .m-skill-item span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .m-skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .m-skill-tag {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 30px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        html.dark .m-skill-tag {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .m-skill-tag:hover {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .m-soft-skills-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .m-soft-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-color-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .m-soft-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .m-soft-tag {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: var(--bg-body);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,7 +326,7 @@
         <div id="mobile-menu" class="nav__mobile-menu">
             <div class="nav__mobile-menu-inner">
                 <a href="about.html" class="nav__mobile-link">À propos</a>
-                <a href="skills.html" class="nav__mobile-link">Compétences</a>
+                <a href="skills.html" class="nav__mobile-link nav__mobile-link--active">Compétences</a>
                 <a href="projects.html" class="nav__mobile-link">Projets</a>
                 <a href="experience.html" class="nav__mobile-link">Parcours</a>
                 <a href="vitrine.html" class="nav__mobile-link">Création de Site</a>
@@ -59,111 +335,116 @@
         </div>
     </nav>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills page-section">
-        <div class="container">
-            <div class="skills__header" data-aos="fade-up">
-                <h2 class="section-title">Compétences Techniques</h2>
-            </div>
+    <!-- Modern Skills Section -->
+    <section class="skills-section">
+        <!-- Abstract Glows -->
+        <div class="skills-bg-glow"></div>
+        <div class="skills-bg-glow-2"></div>
 
-            <div class="skills__grid">
+        <div class="container container--narrow" style="max-width: 1200px;">
+            <h2 class="skills-title" data-aos="zoom-in" data-aos-duration="800">Compétences Techniques</h2>
+
+            <div class="m-skills-grid">
+
                 <!-- Front-end -->
-                <div class="skills__card skills__card--frontend" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skills__card-header">
-                        <i class="ph ph-desktop skills__card-icon skills__card-icon--blue"></i>
-                        <h3 class="skills__card-title">Front-end</h3>
+                <div class="m-skill-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="m-skill-header">
+                        <div class="m-skill-icon-wrap"><i class="ph ph-desktop"></i></div>
+                        <h3 class="m-skill-title">Front-end</h3>
                     </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
+                    <div class="m-skill-list">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                alt="HTML5" />
+                                alt="HTML5" loading="lazy" />
                             <span>HTML5 / CSS3</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                alt="JavaScript" />
+                                alt="JavaScript" loading="lazy" />
                             <span>JavaScript</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                alt="Figma" />
+                                alt="Figma" loading="lazy" />
                             <span>Figma / UI Design</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Back-end -->
-                <div class="skills__card skills__card--backend" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skills__card-header">
-                        <i class="ph ph-database skills__card-icon skills__card-icon--purple"></i>
-                        <h3 class="skills__card-title">Back-end</h3>
+                <div class="m-skill-card m-skill-card--purple" data-aos="fade-up" data-aos-delay="150">
+                    <div class="m-skill-header">
+                        <div class="m-skill-icon-wrap"><i class="ph ph-database"></i></div>
+                        <h3 class="m-skill-title">Back-end</h3>
                     </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                                alt="PHP" />
+                    <div class="m-skill-list">
+                        <div class="m-skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+                                loading="lazy" />
                             <span>PHP</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                                alt="SQL" />
+                                alt="SQL" loading="lazy" />
                             <span>SQL (MySQL/Postgre)</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                                alt="DevOps" />
+                                alt="DevOps" loading="lazy" />
                             <span>DevOps Basique</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Logiciel -->
-                <div class="skills__card skills__card--software" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skills__card-header">
-                        <i class="ph ph-code skills__card-icon skills__card-icon--red"></i>
-                        <h3 class="skills__card-title">Logiciel</h3>
+                <div class="m-skill-card m-skill-card--red" data-aos="fade-up" data-aos-delay="300">
+                    <div class="m-skill-header">
+                        <div class="m-skill-icon-wrap"><i class="ph ph-code"></i></div>
+                        <h3 class="m-skill-title">Logiciel</h3>
                     </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
+                    <div class="m-skill-list">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                alt="Java" />
+                                alt="Java" loading="lazy" />
                             <span>Java / JavaFX</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                alt="C++" />
+                                alt="C++" loading="lazy" />
                             <span>C++</span>
                         </div>
-                        <div class="skills__list-item">
+                        <div class="m-skill-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                alt="Python" />
+                                alt="Python" loading="lazy" />
                             <span>Python</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Outils -->
-                <div class="skills__card skills__card--tools" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skills__card-header">
-                        <i class="ph ph-wrench skills__card-icon skills__card-icon--green"></i>
-                        <h3 class="skills__card-title">Outils</h3>
+                <!-- Outils & Soft Skills -->
+                <div class="m-skill-card m-skill-card--green" data-aos="fade-up" data-aos-delay="450">
+                    <div class="m-skill-header">
+                        <div class="m-skill-icon-wrap"><i class="ph ph-wrench"></i></div>
+                        <h3 class="m-skill-title">Outils & Soft Skills</h3>
                     </div>
-                    <div class="skills__tags">
-                        <span class="skills__tag">Git & GitHub</span>
-                        <span class="skills__tag">VS Code</span>
-                        <span class="skills__tag">StarUML</span>
-                        <span class="skills__tag">IntelliJ</span>
+                    <div class="m-skill-tags">
+                        <span class="m-skill-tag">Git & GitHub</span>
+                        <span class="m-skill-tag">VS Code</span>
+                        <span class="m-skill-tag">StarUML</span>
+                        <span class="m-skill-tag">IntelliJ</span>
                     </div>
-                    <div class="skills__soft-skills">
-                        <h4 class="skills__soft-title">Soft Skills</h4>
-                        <div class="skills__soft-tags">
-                            <span class="skills__soft-tag">Autonomie</span>
-                            <span class="skills__soft-tag">Travail d'équipe</span>
-                            <span class="skills__soft-tag">Rigueur</span>
-                            <span class="skills__soft-tag">Créativité</span>
+
+                    <div class="m-soft-skills-container">
+                        <h4 class="m-soft-title">Savoir-être</h4>
+                        <div class="m-soft-tags">
+                            <span class="m-soft-tag">Autonomie</span>
+                            <span class="m-soft-tag">Travail d'équipe</span>
+                            <span class="m-soft-tag">Rigueur</span>
+                            <span class="m-soft-tag">Créativité</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
