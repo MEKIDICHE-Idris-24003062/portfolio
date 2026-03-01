@@ -34,7 +34,6 @@
     <title>Idris Mekidiche | Développeur Web & Étudiant</title>
     <meta name="description"
         content="Portfolio d'Idris Mekidiche, étudiant en BUT Informatique et développeur web passionné.">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -42,536 +41,490 @@
     <link rel="stylesheet" href="css/tout.css">
 </head>
 
-<body class="bg-gray-50 text-gray-900 dark:bg-dark-900 dark:text-gray-100 transition-colors duration-300">
+<body>
+
+    <!-- Cursor Spotlight -->
+    <div id="cursor-spotlight" class="cursor-spotlight"></div>
 
     <!-- Preloader -->
-    <div id="preloader"
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-50 dark:bg-dark-900 transition-all duration-700 ease-in-out">
-        <div class="relative overflow-hidden flex justify-center items-center">
-            <h1 class="loader-text text-5xl md:text-8xl font-black uppercase tracking-widest">idrismeki</h1>
+    <div id="preloader" class="preloader">
+        <div class="preloader__inner">
+            <h1 class="loader-text">idrismeki</h1>
         </div>
     </div>
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary tracking-tighter">Idris Mekidiche</a>
+    <!-- Navigation -->
+    <nav class="nav glass-nav">
+        <div class="nav__container">
+            <div class="nav__flex">
+                <div>
+                    <a href="#" class="nav__logo">Idris Mekidiche</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">À propos</a>
-                    <a href="#skills" class="text-sm font-medium hover:text-primary transition-colors">Compétences</a>
-                    <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projets</a>
-                    <a href="#experience" class="text-sm font-medium hover:text-primary transition-colors">Parcours</a>
-                    <a href="mailto:idris.mekidiche@gmail.com" target="_blank"
-                        class="px-4 py-2 rounded-full bg-primary text-white text-sm font-medium hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30">
+
+                <!-- Desktop Links -->
+                <div class="nav__links">
+                    <a href="#about" class="nav__link">À propos</a>
+                    <a href="#skills" class="nav__link">Compétences</a>
+                    <a href="#projects" class="nav__link">Projets</a>
+                    <a href="#experience" class="nav__link">Parcours</a>
+                    <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__cta">
                         Me contacter
                     </a>
-                    <button id="theme-toggle"
-                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <i class="ph ph-moon text-xl hidden dark:block"></i>
-                        <i class="ph ph-sun text-xl block dark:hidden"></i>
+                    <button id="theme-toggle" class="nav__theme-btn">
+                        <i class="ph ph-moon icon-moon"></i>
+                        <i class="ph ph-sun icon-sun"></i>
                     </button>
                 </div>
-                <div class="md:hidden flex items-center space-x-4">
-                    <button id="theme-toggle-mobile"
-                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <i class="ph ph-moon text-xl hidden dark:block"></i>
-                        <i class="ph ph-sun text-xl block dark:hidden"></i>
+
+                <!-- Mobile Controls -->
+                <div class="nav__mobile-controls">
+                    <button id="theme-toggle-mobile" class="nav__theme-btn">
+                        <i class="ph ph-moon icon-moon"></i>
+                        <i class="ph ph-sun icon-sun"></i>
                     </button>
-                    <button id="mobile-menu-btn" class="text-gray-900 dark:text-white focus:outline-none">
-                        <i class="ph ph-list text-2xl"></i>
+                    <button id="mobile-menu-btn" class="nav__hamburger">
+                        <i class="ph ph-list"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-900 border-t dark:border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-dark-800">À
-                    propos</a>
-                <a href="#skills"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-dark-800">Compétences</a>
-                <a href="#projects"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-dark-800">Projets</a>
-                <a href="#experience"
-                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-dark-800">Parcours</a>
-                <a href="mailto:idris.mekidiche@gmail.com" target="_blank"
-                    class="block px-3 py-2 mt-4 text-center rounded-md bg-primary text-white font-bold">Me contacter</a>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="nav__mobile-menu">
+            <div class="nav__mobile-menu-inner">
+                <a href="#about" class="nav__mobile-link">À propos</a>
+                <a href="#skills" class="nav__mobile-link">Compétences</a>
+                <a href="#projects" class="nav__mobile-link">Projets</a>
+                <a href="#experience" class="nav__mobile-link">Parcours</a>
+                <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__mobile-cta">Me contacter</a>
             </div>
         </div>
     </nav>
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float"
-            style="animation-delay: 2s;"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <div
-                        class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-blue-500/10 rounded-full border border-blue-500/20">
-                        Disponible pour stage & alternance
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                        Bonjour, je suis <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Idris
-                            Mekidiche</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-                        Étudiant en BUT Informatique à Aix-Marseille. Je conçois des solutions web modernes,
-                        performantes et centrées sur l'utilisateur.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-6">
-                        <a href="#projects"
-                            class="px-5 py-2 rounded-lg bg-primary text-white font-medium hover:bg-blue-600 transition-all shadow-md shadow-blue-500/20 flex items-center gap-2 text-sm">
-                            Voir mes projets <i class="ph ph-arrow-right"></i>
-                        </a>
 
+    <!-- Hero Section -->
+    <section class="hero hero--vanholtz">
 
-                        <div class="flex items-center space-x-6">
-                            <a href="https://www.linkedin.com/in/idris-mekidiche-50582a368/" target="_blank"
-                                class="text-gray-500 hover:text-primary transition-colors" title="LinkedIn">
-                                <i class="ph ph-linkedin-logo text-2xl"></i>
-                            </a>
-                            <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank"
-                                class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                                title="GitHub">
-                                <i class="ph ph-github-logo text-2xl"></i>
-                            </a>
-                            <a href="mailto:idris.mekidiche@gmail.com" target="_blank"
-                                class="text-gray-500 hover:text-red-500 transition-colors" title="Email">
-                                <i class="ph ph-envelope-simple text-2xl"></i>
-                            </a>
-                            <a href="img/cv_idris_mekidiche.pdf" download="CV_Idris_Mekidiche.pdf" target="_blank"
-                                class="ml-4 px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                                Télécharger CV
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="hidden lg:flex justify-center" data-aos="fade-left" data-aos-duration="1000">
-                    <div
-                        class="relative bg-gray-900 border border-gray-700 rounded-xl p-6 shadow-2xl w-full max-w-md transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <div class="flex space-x-2 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <div class="space-y-2 font-mono text-sm">
-                            <div class="flex"><span class="text-purple-400">const</span> <span
-                                    class="text-blue-400 ml-2">profile</span> <span class="text-white ml-2">=</span>
-                                <span class="text-yellow-300 ml-2">{</span>
-                            </div>
-                            <div class="pl-4"><span class="text-gray-400">name:</span> <span
-                                    class="text-green-400">'Idris Mekidiche'</span>,</div>
-                            <div class="pl-4"><span class="text-gray-400">role:</span> <span
-                                    class="text-green-400">'Fullstack Student'</span>,</div>
-                            <div class="pl-4"><span class="text-gray-400">location:</span> <span
-                                    class="text-green-400">'Aix-en-Provence'</span>,</div>
-                            <div class="pl-4"><span class="text-gray-400">skills:</span> <span
-                                    class="text-yellow-300">[</span></div>
-                            <div class="pl-8"><span class="text-green-400">'Html'</span>, <span
-                                    class="text-green-400">'PHP'</span>,<span class="text-green-400">'CSS'</span></div>
-                            <div class="pl-4"><span class="text-yellow-300">]</span></div>
-                            <div class="text-yellow-300">}</div>
-                            <div class="mt-4 text-gray-500">// Prêt à coder le futur</div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Rotating project names as background decoration -->
+        <div class="hero__typo-bg" aria-hidden="true">
+            <div class="hero__typo-track">
+                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up"
+                    data-aos-delay="200">/DASHMED</span>
+                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="400">BOMBERMAN</span>
+                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up" data-aos-delay="600">/DIRECT
+                    RÉNOVE</span>
+                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="800">MAJIK</span>
+                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up"
+                    data-aos-delay="1000">/VALORANT</span>
+                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="1200">PIXEL TEST</span>
             </div>
         </div>
-        <div class="absolute bottom-10 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-gray-400 hover:text-primary transition-colors">
-                <i class="ph ph-caret-down text-3xl"></i>
+
+        <!-- Bottom-left: Identity block -->
+        <div class="hero__identity" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="hero__identity-name">
+                IDRIS<br>MEKIDICHE<span class="hero__identity-dot">.</span>
+            </h1>
+            <div class="hero__identity-meta">
+                <div class="hero__identity-info">
+                    <span>Étudiant BUT Informatique</span>
+                    <span>Aix-en-Provence</span>
+                    <span class="hero__identity-email">idris.mekidiche@gmail.com</span>
+                </div>
+                <nav class="hero__identity-nav">
+                    <a href="#about" class="hero__identity-nav-link"><span class="hero__identity-nav-num">01</span> à
+                        propos</a>
+                    <a href="#skills" class="hero__identity-nav-link"><span class="hero__identity-nav-num">02</span>
+                        compétences</a>
+                    <a href="#projects" class="hero__identity-nav-link"><span class="hero__identity-nav-num">03</span>
+                        projets</a>
+                    <a href="#experience" class="hero__identity-nav-link"><span class="hero__identity-nav-num">04</span>
+                        parcours</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Bottom-right: Social links + badge -->
+        <div class="hero__side-links" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero__badge-vanholtz">
+                Disponible pour stage &amp; alternance
+            </div>
+            <div class="hero__social-col">
+                <a href="https://www.linkedin.com/in/idris-mekidiche-50582a368/" target="_blank"
+                    class="hero__side-link">linkedin</a>
+                <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank" class="hero__side-link">github</a>
+                <a href="mailto:idris.mekidiche@gmail.com" class="hero__side-link">email</a>
+                <a href="img/cv_idris_mekidiche.pdf" download="CV_Idris_Mekidiche.pdf"
+                    class="hero__side-link hero__side-link--cv">télécharger cv ↗</a>
+            </div>
+        </div>
+
+        <!-- Scroll cue -->
+        <div class="hero__scroll-cue">
+            <a href="#about">
+                <i class="ph ph-caret-down"></i>
             </a>
         </div>
     </section>
-    <section id="about" class="py-20 bg-white dark:bg-dark-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row gap-12 items-start">
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about__grid">
                 <!-- Text Content Column -->
-                <div class="w-full md:w-2/3" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-6">Passionné par la technologie et la création</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                <div class="about__text" data-aos="fade-up">
+                    <h3 class="about__heading">Passionné par la technologie et la création</h3>
+                    <p class="about__paragraph">
                         Actuellement en deuxième année de <strong>BUT Informatique à l'IUT d'Aix-en-Provence</strong>,
                         je me spécialise dans le développement d'applications web et logiciels. Mon parcours m'a permis
                         d'explorer aussi bien le backend (Java, PHP, SQL) que le frontend et le design d'interfaces.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                    <p class="about__paragraph">
                         Au-delà du code, je cultive un intérêt fort pour <strong>la création de pc et le
                             multimédia</strong>. La rigueur apprise dans les arts martiaux et la musculation se reflète
                         dans ma méthode de travail : disciplinée et persévérante. Je cherche toujours à combiner
                         esthétique et performance technique.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div
-                            class="px-6 py-4 rounded-xl bg-gray-50 dark:bg-dark-900 text-center border border-gray-100 dark:border-gray-700 hover:border-primary transition-colors min-w-[120px]">
-                            <i class="ph ph-barbell text-3xl text-primary mb-2"></i>
-                            <p class="text-sm font-medium">Basketball et musculation</p>
+                    <div class="about__hobbies">
+                        <div class="about__hobby-card">
+                            <i class="ph ph-barbell about__hobby-icon about__hobby-icon--primary"></i>
+                            <p class="about__hobby-label">Basketball et musculation</p>
                         </div>
-                        <div
-                            class="px-6 py-4 rounded-xl bg-gray-50 dark:bg-dark-900 text-center border border-gray-100 dark:border-gray-700 hover:border-primary transition-colors min-w-[120px]">
-                            <i class="ph ph-video-camera text-3xl text-purple-500 mb-2"></i>
-                            <p class="text-sm font-medium">Montage vidéo</p>
+                        <div class="about__hobby-card">
+                            <i class="ph ph-video-camera about__hobby-icon about__hobby-icon--purple"></i>
+                            <p class="about__hobby-label">Montage vidéo</p>
                         </div>
-                        <div
-                            class="px-6 py-4 rounded-xl bg-gray-50 dark:bg-dark-900 text-center border border-gray-100 dark:border-gray-700 hover:border-primary transition-colors min-w-[120px]">
-                            <i class="ph ph-desktop-tower text-3xl text-red-500 mb-2"></i>
-                            <p class="text-sm font-medium">création de pc professionnel</p>
+                        <div class="about__hobby-card">
+                            <i class="ph ph-desktop-tower about__hobby-icon about__hobby-icon--red"></i>
+                            <p class="about__hobby-label">création de pc professionnel</p>
                         </div>
-                        <div
-                            class="px-6 py-4 rounded-xl bg-gray-50 dark:bg-dark-900 text-center border border-gray-100 dark:border-gray-700 hover:border-primary transition-colors min-w-[120px]">
-                            <i class="ph ph-camera text-3xl text-purple-500 mb-2"></i>
-                            <p class="text-sm font-medium">Photographie</p>
+                        <div class="about__hobby-card">
+                            <i class="ph ph-camera about__hobby-icon about__hobby-icon--purple"></i>
+                            <p class="about__hobby-label">Photographie</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Image Column -->
-                <div class="w-full md:w-2/3" data-aos="fade-left" data-aos-delay="300">
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
-                        <img src="img/moi_de_dos.JPG" alt="Idris Passion"
-                            class="w-full h-auto transition-transform duration-500">
+                <div class="about__image-col" data-aos="fade-left" data-aos-delay="300">
+                    <div class="about__image-wrapper">
+                        <img src="img/moi_de_dos.JPG" alt="Idris Passion">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="skills" class="py-20 bg-gray-50 dark:bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Compétences Techniques</h2>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="skills__header" data-aos="fade-up">
+                <h2 class="section-title">Compétences Techniques</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-sm border-t-4 border-blue-500"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="ph ph-desktop text-2xl text-blue-500"></i>
-                        <h3 class="font-bold text-lg">Front-end</h3>
+
+            <div class="skills__grid">
+                <!-- Front-end -->
+                <div class="skills__card skills__card--frontend" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skills__card-header">
+                        <i class="ph ph-desktop skills__card-icon skills__card-icon--blue"></i>
+                        <h3 class="skills__card-title">Front-end</h3>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2 mb-1">
+                    <div class="skills__list">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                alt="HTML5" class="h-6 w-6" />
+                                alt="HTML5" />
                             <span>HTML5 / CSS3</span>
                         </div>
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                alt="JavaScript" class="h-6 w-6" />
+                                alt="JavaScript" />
                             <span>JavaScript</span>
                         </div>
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                alt="Figma" class="h-6 w-6" />
+                                alt="Figma" />
                             <span>Figma / UI Design</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-sm border-t-4 border-purple-500"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="ph ph-database text-2xl text-purple-500"></i>
-                        <h3 class="font-bold text-lg">Back-end</h3>
+
+                <!-- Back-end -->
+                <div class="skills__card skills__card--backend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skills__card-header">
+                        <i class="ph ph-database skills__card-icon skills__card-icon--purple"></i>
+                        <h3 class="skills__card-title">Back-end</h3>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2 mb-1">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
-                                class="h-6 w-6" />
+                    <div class="skills__list">
+                        <div class="skills__list-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                                alt="PHP" />
                             <span>PHP</span>
                         </div>
-
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                                alt="SQL" class="h-6 w-6" />
+                                alt="SQL" />
                             <span>SQL (MySQL/Postgre)</span>
                         </div>
-
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                                alt="DevOps" class="h-6 w-6" />
+                                alt="DevOps" />
                             <span>DevOps Basique</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-sm border-t-4 border-red-500"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="ph ph-code text-2xl text-red-500"></i>
-                        <h3 class="font-bold text-lg">Logiciel</h3>
+
+                <!-- Logiciel -->
+                <div class="skills__card skills__card--software" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skills__card-header">
+                        <i class="ph ph-code skills__card-icon skills__card-icon--red"></i>
+                        <h3 class="skills__card-title">Logiciel</h3>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2 mb-1">
+                    <div class="skills__list">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                alt="Java" class="h-6 w-6" />
+                                alt="Java" />
                             <span>Java / JavaFX</span>
                         </div>
-
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                alt="C++" class="h-6 w-6" />
+                                alt="C++" />
                             <span>C++</span>
                         </div>
-
-                        <div class="flex items-center space-x-2 mb-1">
+                        <div class="skills__list-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                alt="Python" class="h-6 w-6" />
+                                alt="Python" />
                             <span>Python</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-sm border-t-4 border-green-500"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="ph ph-wrench text-2xl text-green-500"></i>
-                        <h3 class="font-bold text-lg">Outils</h3>
+
+                <!-- Outils -->
+                <div class="skills__card skills__card--tools" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skills__card-header">
+                        <i class="ph ph-wrench skills__card-icon skills__card-icon--green"></i>
+                        <h3 class="skills__card-title">Outils</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">Git & GitHub</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">VS Code</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">StarUML</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-md text-sm">IntelliJ</span>
+                    <div class="skills__tags">
+                        <span class="skills__tag">Git & GitHub</span>
+                        <span class="skills__tag">VS Code</span>
+                        <span class="skills__tag">StarUML</span>
+                        <span class="skills__tag">IntelliJ</span>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <h4 class="text-sm font-bold mb-2 text-gray-500 uppercase">Soft Skills</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 border border-green-500 text-green-600 dark:text-green-400 rounded-full text-xs">Autonomie</span>
-                            <span
-                                class="px-3 py-1 border border-green-500 text-green-600 dark:text-green-400 rounded-full text-xs">Travail
-                                d'équipe</span>
-                            <span
-                                class="px-3 py-1 border border-green-500 text-green-600 dark:text-green-400 rounded-full text-xs">Rigueur</span>
-                            <span
-                                class="px-3 py-1 border border-green-500 text-green-600 dark:text-green-400 rounded-full text-xs">Créativité</span>
+                    <div class="skills__soft-skills">
+                        <h4 class="skills__soft-title">Soft Skills</h4>
+                        <div class="skills__soft-tags">
+                            <span class="skills__soft-tag">Autonomie</span>
+                            <span class="skills__soft-tag">Travail d'équipe</span>
+                            <span class="skills__soft-tag">Rigueur</span>
+                            <span class="skills__soft-tag">Créativité</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="projects" class="py-24 bg-white dark:bg-dark-800 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20" data-aos="fade-in">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Projets Réalisés</h2>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="projects__header" data-aos="fade-in">
+                <div>
+                    <h2 class="section-title">Projets Réalisés</h2>
                 </div>
-                <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank"
-                    class="hidden md:inline-flex items-center gap-2 text-primary font-medium hover:underline mt-4 md:mt-0 group">
-                    Mon GitHub <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank" class="projects__github-link">
+                    Mon GitHub <i class="ph ph-arrow-right"></i>
                 </a>
             </div>
-            <!-- Projects Grid (Main Page) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10" data-aos="fade-up">
+
+            <!-- Projects Grid -->
+            <div class="projects__grid" data-aos="fade-up">
                 <!-- Card 1 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="0">
-                    <div class="aspect-video relative overflow-hidden rounded-t-2xl">
-                        <img src="img/DashMed.png" alt="DashMed"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="project-card project-card--blue" data-index="0">
+                    <div class="project-card__image">
+                        <img src="img/DashMed.png" alt="DashMed">
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-primary font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--blue">
                             <i class="ph ph-desktop"></i> Application Desktop
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">DashMed</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">DashMed</h3>
+                        <p class="project-card__desc">
                             Un dashboard médical complet conçu pour simplifier la gestion des patients.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-red-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="1">
-                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
-                        <img src="img/SuperBomberman.png" alt="Bomberman Clone"
-                            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                <div class="project-card project-card--red" data-index="1">
+                    <div class="project-card__image project-card__image--white-bg project-card__image--contain">
+                        <img src="img/SuperBomberman.png" alt="Bomberman Clone">
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-red-500 font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--red">
                             <i class="ph ph-game-controller"></i> Jeu Vidéo
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bomberman Clone</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">Bomberman Clone</h3>
+                        <p class="project-card__desc">
                             Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="2">
-                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
-                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13"
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                <div class="project-card project-card--green" data-index="2">
+                    <div
+                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
+                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13">
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-green-500 font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--green">
                             <i class="ph ph-globe"></i> E-commerce & Web
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Direct Rénove 13</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">Direct Rénove 13</h3>
+                        <p class="project-card__desc">
                             Site vitrine professionnel pour une entreprise de rénovation.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-purple-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="3">
-                    <div
-                        class="aspect-video relative overflow-hidden rounded-t-2xl bg-gray-900 flex items-center justify-center">
-                        <i
-                            class="ph ph-paint-brush-broad text-6xl text-purple-500 drop-shadow-lg group-hover:scale-110 transition-transform duration-500"></i>
+                <div class="project-card project-card--purple" data-index="3">
+                    <div class="project-card__image project-card__image--dark-bg">
+                        <i class="project-card__icon-placeholder ph ph-paint-brush-broad"></i>
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-purple-500 font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--purple">
                             <i class="ph ph-pen-nib"></i> Branding & Design
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">MAJIK Esports</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">MAJIK Esports</h3>
+                        <p class="project-card__desc">
                             Création d'identités visuelles fortes. Logos, animations et organisation d'un tournoi.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-indigo-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="4">
-                    <div class="aspect-video relative overflow-hidden rounded-t-2xl">
-                        <img src="img/nas.png" alt="Nas"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="project-card project-card--indigo" data-index="4">
+                    <div class="project-card__image">
+                        <img src="img/nas.png" alt="Nas">
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-indigo-500 font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--indigo">
                             <i class="ph ph-ordinateur"></i> Nas
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Création d'un Nas</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">Création d'un Nas</h3>
+                        <p class="project-card__desc">
                             Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="group bg-gray-50 dark:bg-dark-900 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-amber-500 transition-all duration-300 cursor-pointer hover:-translate-y-2 shadow-sm hover:shadow-xl project-card"
-                    data-index="5">
-                    <div class="aspect-video relative overflow-hidden rounded-t-2xl bg-white">
-                        <img src="img/figma_aix.png" alt="Figma Aix"
-                            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                <div class="project-card project-card--amber" data-index="5">
+                    <div
+                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
+                        <img src="img/figma_aix.png" alt="Figma Aix">
                     </div>
-                    <div class="p-6">
-                        <div
-                            class="flex items-center gap-2 text-amber-600 dark:text-amber-500 font-semibold tracking-wider text-xs uppercase mb-3">
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--amber">
                             <i class="ph ph-figma-logo"></i> UX/UI & Design
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Circuit Touristique Aix</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                        <h3 class="project-card__title">Circuit Touristique Aix</h3>
+                        <p class="project-card__desc">
                             Conception en groupe d'une interface d'application inclusive pour découvrir Aix-en-Provence.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-8 pt-12 border-t border-gray-200 dark:border-gray-700">
-                <h3 class="text-2xl font-bold mb-8 text-center">Autres Expériences Web</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <img src="img/Valorant.png" alt="Valorant" class="w-20 h-20">
+            <!-- Other Experiences -->
+            <div class="projects__other">
+                <h3 class="projects__other-title">Autres Expériences Web</h3>
+                <div class="projects__other-grid">
+                    <div class="projects__other-card project-card" data-index="6" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <img src="img/Valorant.png" alt="Valorant">
                         <div>
-                            <h4 class="text-lg font-bold mb-2">Fan Site Valorant</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Exploration des animations CSS
-                                et des interactions dynamiques.</p>
-                            <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
+                            <h4>Fan Site Valorant</h4>
+                            <p>Exploration des animations CSS et des interactions dynamiques.</p>
+                            <span class="projects__other-tech">HTML • CSS • JS</span>
                         </div>
                         <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Le site</i>
+                            class="projects__other-link">
+                            Le site
                         </a>
                     </div>
-                    <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex gap-4 items-start"
-                        data-aos="fade-up" data-aos-delay="100">
-                        <img src="img/tester_les_pixel.png" alt="Valorant" class="w-20 h-20">
+                    <div class="projects__other-card project-card" data-index="7" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <img src="img/tester_les_pixel.png" alt="Testeur de pixel">
                         <div>
-                            <h4 class="text-lg font-bold mb-2">Site testeur de pixel</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Création d'un site pour pouvoir
-                                tester les écrant qui ma aider pour la répartion d'écran d'ordinateur</p>
-                            <span class="text-xs font-mono text-primary">HTML • CSS • JS</span>
+                            <h4>Site testeur de pixel</h4>
+                            <p>Création d'un site pour pouvoir tester les écrant qui ma aider pour la répartion d'écran
+                                d'ordinateur</p>
+                            <span class="projects__other-tech">HTML • CSS • JS</span>
                         </div>
                         <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
-                            class="inline-flex items-center font-semibold text-primary hover:text-blue-400 transition-colors mt-4">
-                            Le site</i>
+                            class="projects__other-link">
+                            Le site
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </section>
-    <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Parcours & Expériences</h2>
-            <div
-                class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent dark:before:via-gray-700">
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-                    data-aos="fade-up">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white z-10">
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container--narrow">
+            <h2 class="experience__title" data-aos="fade-up">Parcours & Expériences</h2>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline__item" data-aos="fade-up">
+                    <div class="timeline__dot timeline__dot--primary">
                         <i class="ph ph-student"></i>
                     </div>
-                    <div
-                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-800 shadow-sm">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-gray-900 dark:text-white">BUT Informatique</div>
-                            <time class="font-mono text-xs text-primary">2024 - Présent</time>
+                    <div class="timeline__content">
+                        <div class="timeline__content-header">
+                            <div class="timeline__content-title">BUT Informatique</div>
+                            <time class="timeline__content-date">2024 - Présent</time>
                         </div>
-                        <div class="text-sm text-gray-500 mb-2">IUT d'Aix-en-Provence</div>
-                        <div class="text-gray-600 dark:text-gray-400 text-sm">
+                        <div class="timeline__content-subtitle">IUT d'Aix-en-Provence</div>
+                        <div class="timeline__content-desc">
                             Apprentissage intensif : Algorithmique, Développement Web, Bases de données, Programmation
                             orientée objet.
                         </div>
                     </div>
                 </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-indigo-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white z-10">
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline__item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline__dot timeline__dot--indigo">
                         <i class="ph ph-hand-heart"></i>
                     </div>
-                    <div
-                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-800 shadow-sm">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-gray-900 dark:text-white">Bénévolat</div>
-                            <time class="font-mono text-xs text-primary">2022 - Présent</time>
+                    <div class="timeline__content">
+                        <div class="timeline__content-header">
+                            <div class="timeline__content-title">Bénévolat</div>
+                            <time class="timeline__content-date">2022 - Présent</time>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 text-sm">
+                        <div class="timeline__content-desc">
                             Participation à des maraudes et événements culturels. Développement du sens de l'empathie et
                             de la gestion humaine.
                         </div>
                     </div>
                 </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white z-10">
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline__item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline__dot timeline__dot--slate">
                         <i class="ph ph-briefcase"></i>
                     </div>
-                    <div
-                        class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-800 shadow-sm">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-gray-900 dark:text-white">Stage - Rénovation</div>
-                            <time class="font-mono text-xs text-gray-500">2023</time>
+                    <div class="timeline__content">
+                        <div class="timeline__content-header">
+                            <div class="timeline__content-title">Stage - Rénovation</div>
+                            <time class="timeline__content-date timeline__content-date--muted">2023</time>
                         </div>
-                        <div class="text-sm text-gray-500 mb-2">Société de bâtiment</div>
-                        <div class="text-gray-600 dark:text-gray-400 text-sm">
+                        <div class="timeline__content-subtitle">Société de bâtiment</div>
+                        <div class="timeline__content-desc">
                             Découverte du monde professionnel, travail en équipe sur chantier et premiers pas dans la
                             création du site vitrine de l'entreprise.
                         </div>
@@ -580,229 +533,247 @@
             </div>
         </div>
     </section>
-    <footer class="py-8 bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-gray-800 text-center">
-        <p class="text-gray-500 text-sm">
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer__text">
             © Idris Mekidiche.
         </p>
     </footer>
-    <!-- Fullscreen Swiper Lightbox -->
-    <div id="project-modal"
-        class="fixed inset-0 z-[200] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="absolute inset-0 bg-white/95 dark:bg-[#0f172a]/98 backdrop-blur-xl transition-opacity"
-            id="modal-backdrop"></div>
 
-        <button id="modal-close"
-            class="absolute top-4 right-4 md:top-8 md:right-8 z-[210] p-3 md:p-4 bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700 text-gray-900 dark:text-white rounded-full transition-colors">
-            <i class="ph ph-x text-2xl"></i>
+    <!-- Fullscreen Swiper Lightbox (Modal) -->
+    <div id="project-modal" class="modal">
+        <div class="modal__backdrop" id="modal-backdrop"></div>
+
+        <button id="modal-close" class="modal__close">
+            <i class="ph ph-x"></i>
         </button>
 
-        <div class="w-full h-full relative z-[205] py-12 md:py-16 flex items-center" id="modal-content">
-            <div class="swiper projects-swiper w-full max-w-7xl mx-auto !px-4 md:!px-20 h-full max-h-[900px]">
-                <div class="swiper-wrapper flex items-center">
+        <div class="modal__content" id="modal-content">
+            <div class="swiper projects-swiper modal__swiper">
+                <div class="swiper-wrapper">
 
                     <!-- Slide 1 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <img src="img/DashMed.png" alt="DashMed"
-                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image">
+                            <img src="img/DashMed.png" alt="DashMed">
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-primary bg-primary/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-primary/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--blue">
                                 <i class="ph ph-desktop"></i> Application Desktop
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">DashMed</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">DashMed</h3>
+                            <p class="modal__slide-desc">
                                 Un dashboard médical complet conçu pour simplifier la gestion des patients. J'ai voulu
                                 créer une interface qui soit non seulement fonctionnelle mais aussi apaisante
                                 visuellement pour le personnel médical.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">PHP</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">SQL</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">PHP</span>
+                                <span class="modal__slide-tag">SQL</span>
                             </div>
-                            <div class="pt-4">
+                            <div class="modal__slide-cta">
                                 <a href="https://dashmed.alwaysdata.net/?page=homepage" target="_blank"
-                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
-                                    Voir le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                    class="modal__slide-btn">
+                                    Voir le site <i class="ph ph-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 2 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <img src="img/SuperBomberman.png" alt="Bomberman Clone"
-                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border">
+                            <img src="img/SuperBomberman.png" alt="Bomberman Clone">
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-red-500 bg-red-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-red-500/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--red">
                                 <i class="ph ph-game-controller"></i> Jeu Vidéo
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Bomberman Clone
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">Bomberman Clone</h3>
+                            <p class="modal__slide-desc">
                                 Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe :
                                 gestion des collisions, IA des ennemis et génération procédurale de niveaux. Un vrai
                                 challenge technique.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Java</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">JavaFX</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Algorithmique</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">Java</span>
+                                <span class="modal__slide-tag">JavaFX</span>
+                                <span class="modal__slide-tag">Algorithmique</span>
                             </div>
-                            <div class="pt-4">
+                            <div class="modal__slide-cta">
                                 <a href="https://github.com/BOUDHIB-Mohame-Amine-24006551/SuperBomberman"
-                                    target="_blank"
-                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
-                                    Voir le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                    target="_blank" class="modal__slide-btn">
+                                    Voir le site <i class="ph ph-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 3 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <img src="img/DirectRénove13.png" alt="Direct Rénove 13"
-                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border">
+                            <img src="img/DirectRénove13.png" alt="Direct Rénove 13">
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-green-500 bg-green-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-green-500/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--green">
                                 <i class="ph ph-globe"></i> E-commerce & Web
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Direct Rénove 13
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">Direct Rénove 13</h3>
+                            <p class="modal__slide-desc">
                                 Site vitrine professionnel pour une entreprise de rénovation. J'ai mis l'accent sur une
                                 navigation fluide et un design épuré, tout en optimisant les performances pour une
                                 expérience utilisateur optimale.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">HTML/CSS</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">JS</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">HTML/CSS</span>
+                                <span class="modal__slide-tag">JS</span>
                             </div>
-                            <div class="pt-4">
+                            <div class="modal__slide-cta">
                                 <a href="https://directrevnov13.alwaysdata.net/" target="_blank"
-                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
-                                    Visiter le site <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                    class="modal__slide-btn">
+                                    Visiter le site <i class="ph ph-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 4 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <div
-                                class="w-full max-w-md aspect-video bg-gray-900 rounded-2xl flex items-center justify-center drop-shadow-2xl border border-gray-700">
-                                <i class="ph ph-paint-brush-broad text-8xl text-purple-500"></i>
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image">
+                            <div class="modal__slide-icon-wrapper">
+                                <i class="ph ph-paint-brush-broad"></i>
                             </div>
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-purple-500 bg-purple-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-purple-500/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--purple">
                                 <i class="ph ph-pen-nib"></i> Branding & Design
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">MAJIK Esports</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm xl:text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">MAJIK Esports</h3>
+                            <p class="modal__slide-desc modal__slide-desc--sm">
                                 Au-delà du code, j'aime créer des identités visuelles fortes. Pour MAJIK, nous avons
-                                conçu tout l’univers graphique : logo, animations afin d’assurer une cohérence totale.
+                                conçu tout l'univers graphique : logo, animations afin d'assurer une cohérence totale.
                                 Plusieurs classes ont travaillé sur ce projet et notre groupe a remporté le concours de
                                 la meilleure identité visuelle. Nous avons donc ensuite organisé le tournoi.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Photoshop</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Communication</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">Photoshop</span>
+                                <span class="modal__slide-tag">Communication</span>
                             </div>
-                            <div class="pt-4">
-                                <a href="https://majik-esports.netlify.app/" target="_blank"
-                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
-                                    Lien du site web <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                            <div class="modal__slide-cta">
+                                <a href="https://majik-esports.netlify.app/" target="_blank" class="modal__slide-btn">
+                                    Lien du site web <i class="ph ph-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 5 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <img src="img/nas.png" alt="Nas"
-                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl rounded-2xl border border-gray-200 dark:border-gray-700">
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image">
+                            <img src="img/nas.png" alt="Nas">
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-indigo-500 bg-indigo-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-indigo-500/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--indigo">
                                 <i class="ph ph-ordinateur"></i> Nas
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Création d'un Nas
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">Création d'un Nas</h3>
+                            <p class="modal__slide-desc">
                                 Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé des
                                 données. Utilisation de TrueNas pour une interface intuitive et CasaOs pour la gestion
                                 des applications.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Tailscale</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">TrueNas</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">CasaOs</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">Tailscale</span>
+                                <span class="modal__slide-tag">TrueNas</span>
+                                <span class="modal__slide-tag">CasaOs</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide 6 -->
-                    <div
-                        class="swiper-slide flex flex-col lg:flex-row items-center justify-center gap-12 cursor-grab active:cursor-grabbing h-auto p-4">
-                        <div class="w-full lg:w-1/2 flex justify-center">
-                            <img src="img/figma_aix.png" alt="Figma Aix"
-                                class="max-w-full max-h-[50vh] object-contain drop-shadow-2xl">
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border">
+                            <img src="img/figma_aix.png" alt="Figma Aix">
                         </div>
-                        <div class="w-full lg:w-1/2 space-y-6 text-left">
-                            <div
-                                class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-500 bg-amber-500/10 px-4 py-1.5 rounded-full font-semibold tracking-wider text-xs uppercase border border-amber-500/20">
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--amber">
                                 <i class="ph ph-figma-logo"></i> UX/UI & Design
                             </div>
-                            <h3 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Circuit
-                                Touristique Aix</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm xl:text-lg leading-relaxed max-w-xl">
+                            <h3 class="modal__slide-title">Circuit Touristique Aix</h3>
+                            <p class="modal__slide-desc modal__slide-desc--sm">
                                 Conception en groupe d'une interface d'application inclusive pour découvrir
                                 Aix-en-Provence. Le projet se concentre sur l'accessibilité (PMR, seniors, familles) et
                                 propose des itinéraires personnalisés (culturel, artistique, dynamique) avec une
                                 navigation optimisée.
                             </p>
-                            <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Figma</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Prototypage</span>
-                                <span
-                                    class="px-4 py-2 bg-gray-100 dark:bg-[#1e293b] rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Accessibilité</span>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">Figma</span>
+                                <span class="modal__slide-tag">Prototypage</span>
+                                <span class="modal__slide-tag">Accessibilité</span>
                             </div>
-                            <div class="pt-4">
+                            <div class="modal__slide-cta">
                                 <a href="https://www.figma.com/proto/Gi9g98YJV9s1erSJUP5i7G/S105--%7C-BARBERIS---HELALI---MEKIDICHE---RATIANANAHARY---STEFANOVITCH---WATRIPONT--Copy-?node-id=4001-851&starting-point-node-id=89%3A83"
-                                    target="_blank"
-                                    class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
-                                    Voir la maquette <i class="ph ph-arrow-up-right ml-2 text-xl"></i>
+                                    target="_blank" class="modal__slide-btn">
+                                    Voir la maquette <i class="ph ph-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 - Fan Site Valorant -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border">
+                            <img src="img/Valorant.png" alt="Fan Site Valorant">
+                        </div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--red">
+                                <i class="ph ph-globe"></i> Site Web
+                            </div>
+                            <h3 class="modal__slide-title">Fan Site Valorant</h3>
+                            <p class="modal__slide-desc">
+                                Exploration des animations CSS avancées et des interactions dynamiques au travers d'un
+                                site dédié à l'univers de Valorant. Ce projet m'a permis de perfectionner mes
+                                compétences en HTML, CSS et JavaScript.
+                            </p>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">HTML</span>
+                                <span class="modal__slide-tag">CSS</span>
+                                <span class="modal__slide-tag">JavaScript</span>
+                            </div>
+                            <div class="modal__slide-cta">
+                                <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
+                                    class="modal__slide-btn">
+                                    Voir le site <i class="ph ph-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 - Testeur de Pixel -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border">
+                            <img src="img/tester_les_pixel.png" alt="Testeur de Pixel">
+                        </div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--blue">
+                                <i class="ph ph-monitor"></i> Outil Web
+                            </div>
+                            <h3 class="modal__slide-title">Testeur de Pixel</h3>
+                            <p class="modal__slide-desc">
+                                Création d'un outil web permettant de tester les pixels des écrans, utile pour la
+                                réparation d'écrans d'ordinateur. Un projet pratique qui combine logique JavaScript et
+                                manipulation du DOM.
+                            </p>
+                            <div class="modal__slide-tags">
+                                <span class="modal__slide-tag">HTML</span>
+                                <span class="modal__slide-tag">CSS</span>
+                                <span class="modal__slide-tag">JavaScript</span>
+                            </div>
+                            <div class="modal__slide-cta">
+                                <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
+                                    class="modal__slide-btn">
+                                    Voir le site <i class="ph ph-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -811,14 +782,10 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="swiper-pagination !bottom-0 pb-4"></div>
+                <div class="swiper-pagination"></div>
                 <!-- Navigation -->
-                <div
-                    class="swiper-button-prev !text-primary !w-14 !h-14 bg-white dark:bg-[#1e293b] rounded-full shadow-lg border border-gray-100 dark:border-gray-700 !left-0 md:!left-4 after:!text-2xl shadow-blue-500/20">
-                </div>
-                <div
-                    class="swiper-button-next !text-primary !w-14 !h-14 bg-white dark:bg-[#1e293b] rounded-full shadow-lg border border-gray-100 dark:border-gray-700 !right-0 md:!right-4 after:!text-2xl shadow-blue-500/20">
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>

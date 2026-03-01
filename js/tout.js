@@ -1,4 +1,55 @@
 
+// Cursor Spotlight Effect
+(function () {
+    const spotlight = document.getElementById('cursor-spotlight');
+    if (!spotlight) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let rafId = null;
+
+    // Detect touch devices — disable the effect on mobile
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) return;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!spotlight.classList.contains('is-active')) {
+            spotlight.classList.add('is-active');
+        }
+    });
+
+    document.addEventListener('mouseleave', () => {
+        spotlight.classList.remove('is-active');
+    });
+
+    // Check dark mode to adjust spotlight color & size
+    function getSpotlightConfig() {
+        const isDark = document.documentElement.classList.contains('dark');
+        return isDark
+            ? { color: 'rgba(56, 189, 248, 0.10)', radius: 650, spread: 40 }
+            : { color: 'rgba(59, 130, 246, 0.22)', radius: 800, spread: 50 };
+    }
+
+    // Main animation loop with dynamic color
+    function updateSpotlightDynamic() {
+        currentX += (mouseX - currentX) * 0.15;
+        currentY += (mouseY - currentY) * 0.15;
+
+        const { color, radius, spread } = getSpotlightConfig();
+        spotlight.style.background = `radial-gradient(${radius}px circle at ${currentX}px ${currentY}px, ${color}, transparent ${spread}%)`;
+
+        rafId = requestAnimationFrame(updateSpotlightDynamic);
+    }
+
+    // Start the animation loop
+    updateSpotlightDynamic();
+})();
+
 // Init AOS (Animations)
 AOS.init({
     once: true,
@@ -38,43 +89,15 @@ const btn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
 
 btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    menu.classList.toggle('is-open');
 });
 
 // Close mobile menu on link click
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.add('hidden');
+        menu.classList.remove('is-open');
     });
 });
-
-tailwind.config = {
-    darkMode: 'class',
-    theme: {
-        extend: {
-            colors: {
-                primary: '#3b82f6',
-                dark: {
-                    900: '#0f172a',
-                    800: '#1e293b',
-                    700: '#334155',
-                }
-            },
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-            },
-            animation: {
-                'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-                float: {
-                    '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-20px)' },
-                }
-            }
-        }
-    }
-}
 
 // Init Swiper (Projects Slider)
 let projectsSwiper;
@@ -91,10 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            mousewheel: {
+                forceToAxis: true,
+                sensitivity: 1,
+                thresholdDelta: 20,
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
             effect: 'slide',
             speed: 600,
             spaceBetween: 50,
-            autoHeight: true
         });
     }
 
@@ -104,19 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loaderText && preloader) {
         loaderText.addEventListener('animationend', () => {
-            // Un petit délai après le remplissage pour profiter du logo complet
             setTimeout(() => {
-                preloader.classList.add('opacity-0');
                 preloader.classList.add('preloader-hidden');
 
-                // Wait for the transition defined in CSS/HTML (duration-700) to clear it from DOM mostly
                 setTimeout(() => {
                     preloader.classList.add('hidden');
                 }, 700);
             }, 300);
         });
     } else if (preloader) {
-        // Fallback s'il n'y a pas l'animation
         window.addEventListener('load', () => {
             preloader.classList.add('hidden');
         });
@@ -129,24 +156,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Make project cards clickable
     document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            // Don't open modal if user clicked a direct link inside the card
+            if (e.target.closest('a')) return;
+
             const index = card.getAttribute('data-index');
 
-            // Open Modal first, so DOM is interactable for size calculations
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden'; // prevent background scrolling
+            // Open Modal
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
 
             // Update & Go to the specific slide
             if (projectsSwiper) {
-                projectsSwiper.update(); // Fixes sizing issues inside hidden containers
-                projectsSwiper.slideToLoop(parseInt(index), 0); // speed 0 to snap instantly
+                projectsSwiper.update();
+                projectsSwiper.slideToLoop(parseInt(index), 0);
             }
         });
     });
 
     const closeModal = () => {
         if (!modal) return;
-        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('is-open');
         document.body.style.overflow = '';
     };
 
