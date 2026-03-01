@@ -10,6 +10,251 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/tout.css">
+    <style>
+        /* New Advanced Glassmorphism Timeline Styles */
+        .experience {
+            position: relative;
+            padding: 120px 0 100px;
+            overflow: hidden;
+        }
+
+        /* Abstract glowing background blobs */
+        .exp-bg-glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            top: 20%;
+            left: -10vw;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .exp-bg-glow-2 {
+            position: absolute;
+            width: 30vw;
+            height: 30vw;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            bottom: 10%;
+            right: -5vw;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        html.dark .exp-bg-glow {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        html.dark .exp-bg-glow-2 {
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .exp-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 2;
+            position: relative;
+        }
+
+        .modern-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        /* The central glowing vertical line */
+        .modern-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), #a855f7, transparent);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+
+        .m-timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .m-timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .m-timeline-icon {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            z-index: 3;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .m-timeline-item:hover .m-timeline-icon {
+            transform: translate(-50%, 0) scale(1.2) rotate(10deg);
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+        }
+
+        .m-timeline-content {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        html.dark .m-timeline-content {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .m-timeline-item:hover .m-timeline-content {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .m-timeline-date {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        html.dark .m-timeline-date {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .m-timeline-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .m-timeline-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color-muted);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .m-timeline-desc {
+            color: var(--text-color-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Connecting arrows */
+        .m-timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .m-timeline-item:nth-child(odd) .m-timeline-content::before {
+            right: -15px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, 0.6);
+        }
+
+        html.dark .m-timeline-item:nth-child(odd) .m-timeline-content::before {
+            border-color: transparent transparent transparent rgba(30, 41, 59, 0.7);
+        }
+
+        .m-timeline-item:nth-child(even) .m-timeline-content::before {
+            left: -15px;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent rgba(255, 255, 255, 0.6) transparent transparent;
+        }
+
+        html.dark .m-timeline-item:nth-child(even) .m-timeline-content::before {
+            border-color: transparent rgba(30, 41, 59, 0.7) transparent transparent;
+        }
+
+
+        /* Responsive (Mobile view) */
+        @media (max-width: 768px) {
+            .modern-timeline::before {
+                left: 30px;
+            }
+
+            .m-timeline-item,
+            .m-timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 80px;
+            }
+
+            .m-timeline-icon {
+                left: 30px;
+            }
+
+            .m-timeline-content {
+                width: 100%;
+            }
+
+            .m-timeline-item:nth-child(odd) .m-timeline-content::before,
+            .m-timeline-item:nth-child(even) .m-timeline-content::before {
+                left: -15px;
+                right: auto;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent rgba(255, 255, 255, 0.6) transparent transparent;
+            }
+
+            html.dark .m-timeline-item:nth-child(odd) .m-timeline-content::before,
+            html.dark .m-timeline-item:nth-child(even) .m-timeline-content::before {
+                border-color: transparent rgba(30, 41, 59, 0.7) transparent transparent;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,17 +268,20 @@
                 <div>
                     <a href="index.html" class="nav__logo">Idris Mekidiche</a>
                 </div>
+                <!-- Desktop -->
                 <div class="nav__links">
                     <a href="about.html" class="nav__link">À propos</a>
                     <a href="skills.html" class="nav__link">Compétences</a>
                     <a href="projects.html" class="nav__link">Projets</a>
                     <a href="experience.html" class="nav__link nav__link--active">Parcours</a>
+                    <a href="vitrine.html" class="nav__link">Création de Site</a>
                     <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__cta">Me contacter</a>
                     <button id="theme-toggle" class="nav__theme-btn">
                         <i class="ph ph-moon icon-moon"></i>
                         <i class="ph ph-sun icon-sun"></i>
                     </button>
                 </div>
+                <!-- Mobile -->
                 <div class="nav__mobile-controls">
                     <button id="theme-toggle-mobile" class="nav__theme-btn">
                         <i class="ph ph-moon icon-moon"></i>
@@ -45,75 +293,75 @@
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="nav__mobile-menu">
             <div class="nav__mobile-menu-inner">
                 <a href="about.html" class="nav__mobile-link">À propos</a>
                 <a href="skills.html" class="nav__mobile-link">Compétences</a>
                 <a href="projects.html" class="nav__mobile-link">Projets</a>
-                <a href="experience.html" class="nav__mobile-link">Parcours</a>
+                <a href="experience.html" class="nav__mobile-link nav__mobile-link--active">Parcours</a>
+                <a href="vitrine.html" class="nav__mobile-link">Création de Site</a>
                 <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__mobile-cta">Me contacter</a>
             </div>
         </div>
     </nav>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience page-section">
-        <div class="container--narrow">
-            <h2 class="experience__title" data-aos="fade-up">Parcours &amp; Expériences</h2>
+    <!-- Detailed Aesthetics Experience Section -->
+    <section class="experience" id="experience">
+        <!-- Abstract Glows -->
+        <div class="exp-bg-glow"></div>
+        <div class="exp-bg-glow-2"></div>
 
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline__item" data-aos="fade-up">
-                    <div class="timeline__dot timeline__dot--primary">
-                        <i class="ph ph-student"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">BUT Informatique</div>
-                            <time class="timeline__content-date">2024 - Présent</time>
-                        </div>
-                        <div class="timeline__content-subtitle">IUT d'Aix-en-Provence</div>
-                        <div class="timeline__content-desc">
-                            Apprentissage intensif : Algorithmique, Développement Web, Bases de données, Programmation
-                            orientée objet.
-                        </div>
+        <div class="container">
+            <h2 class="exp-title" data-aos="zoom-in" data-aos-duration="800">Parcours & Expériences</h2>
+
+            <div class="modern-timeline">
+
+                <!-- Item 1 -->
+                <div class="m-timeline-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="m-timeline-icon"><i class="ph ph-student"></i></div>
+                    <div class="m-timeline-content">
+                        <span class="m-timeline-date">2024 - Présent</span>
+                        <h3 class="m-timeline-title">BUT Informatique</h3>
+                        <h4 class="m-timeline-subtitle">IUT d'Aix-en-Provence</h4>
+                        <p class="m-timeline-desc">Apprentissage intensif théorique et pratique : Algorithmique avancée,
+                            Développement Web (Front-End & Back-End), architecture de Bases de données relationnelles et
+                            Programmation Orientée Objet. Acquisition de compétences solides pour la conception
+                            logicielle.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
-                <div class="timeline__item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline__dot timeline__dot--indigo">
-                        <i class="ph ph-hand-heart"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">Bénévolat</div>
-                            <time class="timeline__content-date">2022 - Présent</time>
-                        </div>
-                        <div class="timeline__content-desc">
-                            Participation à des maraudes et événements culturels. Développement du sens de l'empathie et
-                            de la gestion humaine.
-                        </div>
+                <!-- Item 2 -->
+                <div class="m-timeline-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="m-timeline-icon" style="color: #8b5cf6; border-color: #8b5cf6;"><i
+                            class="ph ph-hand-heart"></i></div>
+                    <div class="m-timeline-content">
+                        <span class="m-timeline-date" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);">2022
+                            - Présent</span>
+                        <h3 class="m-timeline-title">Engagement Bénévole</h3>
+                        <h4 class="m-timeline-subtitle">Association Humanitaire & Culturelle</h4>
+                        <p class="m-timeline-desc">Participation active à des maraudes pour l'aide aux sans-abris et
+                            organisation d'événements culturels locaux. Renforcement du sens de l'empathie, de la
+                            gestion du stress humain et de l'encadrement logistique solidaire.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
-                <div class="timeline__item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline__dot timeline__dot--slate">
-                        <i class="ph ph-briefcase"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">Stage - Rénovation</div>
-                            <time class="timeline__content-date timeline__content-date--muted">2023</time>
-                        </div>
-                        <div class="timeline__content-subtitle">Société de bâtiment</div>
-                        <div class="timeline__content-desc">
-                            Découverte du monde professionnel, travail en équipe sur chantier et premiers pas dans la
-                            création du site vitrine de l'entreprise.
-                        </div>
+                <!-- Item 3 -->
+                <div class="m-timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="m-timeline-icon" style="color: #10b981; border-color: #10b981;"><i
+                            class="ph ph-briefcase"></i></div>
+                    <div class="m-timeline-content">
+                        <span class="m-timeline-date"
+                            style="color: #10b981; background: rgba(16, 185, 129, 0.1);">2023</span>
+                        <h3 class="m-timeline-title">Stage en Bâtiment & Numérique</h3>
+                        <h4 class="m-timeline-subtitle">Société "Direct Rénove 13"</h4>
+                        <p class="m-timeline-desc">Découverte concrète du monde professionnel. Travail en équipe de
+                            terrain avec suivi de chantiers de rénovation. J'ai également fait mes premiers pas dans
+                            l'intégration numérique en amorçant la création du site vitrine professionnel de
+                            l'entreprise.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -124,7 +372,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/tout.js"></script>
-
 </body>
 
 </html>
