@@ -1451,7 +1451,7 @@ html.dark .modal__close:hover {
     width: 100%;
     max-width: 90rem;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0;
     height: 100%;
 }
 
@@ -1462,7 +1462,8 @@ html.dark .modal__close:hover {
     justify-content: center;
     gap: 3rem;
     cursor: grab;
-    padding: 1rem;
+    padding: 1rem 4rem;
+    box-sizing: border-box;
 }
 
 .modal__slide:active {
@@ -1782,7 +1783,11 @@ html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
     }
 
     .modal__swiper {
-        padding: 0 6rem;
+        padding: 0;
+    }
+
+    .modal__slide {
+        padding: 1rem 6rem;
     }
 
     .modal__slide-title {
