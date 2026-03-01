@@ -102,7 +102,9 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
 // Init Swiper (Projects Slider)
 let projectsSwiper;
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof Swiper !== 'undefined') {
+
+    const swiperEl = document.querySelector('.projects-swiper');
+    if (typeof Swiper !== 'undefined' && swiperEl) {
         projectsSwiper = new Swiper('.projects-swiper', {
             loop: true,
             grabCursor: true,
@@ -162,14 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const index = card.getAttribute('data-index');
 
-            // Open Modal
-            modal.classList.add('is-open');
-            document.body.style.overflow = 'hidden';
+            if (modal) {
+                // Open Modal
+                modal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
 
-            // Update & Go to the specific slide
-            if (projectsSwiper) {
-                projectsSwiper.update();
-                projectsSwiper.slideToLoop(parseInt(index), 0);
+                // Update & Go to the specific slide
+                if (projectsSwiper) {
+                    projectsSwiper.update();
+                    projectsSwiper.slideToLoop(parseInt(index), 0);
+                }
             }
         });
     });
@@ -178,8 +182,139 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!modal) return;
         modal.classList.remove('is-open');
         document.body.style.overflow = '';
+
+        // Remove the ?p= parameter on close to keep URL clean (optional but good for UX)
+        const url = new URL(window.location);
+        if (url.searchParams.has('p')) {
+            url.searchParams.delete('p');
+            window.history.replaceState({}, document.title, url.pathname);
+        }
     };
 
-    closeBtn?.addEventListener('click', closeModal);
-    backdrop?.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    // Auto-open modal if URL contains ?p=X (Used when linking from Hero text)
+    if (modal && projectsSwiper) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('p');
+        if (projectId !== null) {
+            // Wait slightly for Swiper to finish its internal initialization
+            setTimeout(() => {
+                modal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                projectsSwiper.update();
+                projectsSwiper.slideToLoop(parseInt(projectId), 0);
+            }, 100);
+        }
+    }
+
+    // Hover Preview Logic for Hero Typography
+    const hoverPreview = document.getElementById('hover-preview');
+    if (hoverPreview) {
+        const previewImg = document.getElementById('hover-preview-img');
+        const previewDesc = document.getElementById('hover-preview-desc');
+        const previewYear = document.getElementById('hover-preview-year');
+        const previewTags = document.getElementById('hover-preview-tags');
+        const typoLinks = document.querySelectorAll('.hero__typo-name');
+
+        let isHovering = false;
+
+        // Mouse move listener to follow cursor
+        document.addEventListener('mousemove', (e) => {
+            if (isHovering) {
+                // Adjust position so it centers roughly on the cursor
+                hoverPreview.style.left = `${e.clientX}px`;
+                hoverPreview.style.top = `${e.clientY}px`;
+            }
+        });
+
+        typoLinks.forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                isHovering = true;
+
+                // Get data from data attributes
+                const imgSrc = link.getAttribute('data-preview-img');
+                const desc = link.getAttribute('data-preview-desc');
+                const year = link.getAttribute('data-preview-year');
+                const tags = link.getAttribute('data-preview-tags');
+
+                // Populate card
+                if (imgSrc) previewImg.src = imgSrc;
+                if (desc) previewDesc.textContent = desc;
+                if (year) previewYear.textContent = year;
+                if (tags) previewTags.textContent = tags;
+
+                // Position initially
+                hoverPreview.style.left = `${e.clientX}px`;
+                hoverPreview.style.top = `${e.clientY}px`;
+
+                // Show card
+                hoverPreview.classList.add('is-active');
+            });
+
+            link.addEventListener('mouseleave', () => {
+                isHovering = false;
+                hoverPreview.classList.remove('is-active');
+            });
+        });
+    }
+
+    // Manual + Auto Scroll Logic for Hero Typography (Infinite wheel/touch scroll)
+    const typoTrack = document.querySelector('.hero__typo-track');
+    if (typoTrack) {
+        let currentTranslateY = 0;
+        let targetTranslateY = 0;
+        const MANUAL_SCROLL_SPEED = 0.8;
+        const AUTO_SCROLL_SPEED = 0.5; // Controls the base automatic scroll speed
+
+        // Let's use the isHovering variable from the hover preview logic to pause auto-scroll
+        // It's defined above, but we'll read the state.
+
+        window.addEventListener('wheel', (e) => {
+            targetTranslateY += e.deltaY * MANUAL_SCROLL_SPEED;
+        });
+
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+        window.addEventListener('touchmove', (e) => {
+            const touchY = e.touches[0].clientY;
+            targetTranslateY += (touchStartY - touchY) * MANUAL_SCROLL_SPEED;
+            touchStartY = touchY;
+        });
+
+        function animTypoScroll() {
+            // Apply constant auto-scroll if the mouse is not hovering over a link
+            // 'isHovering' acts as a flag for pausing
+            if (!document.querySelector('.hover-preview.is-active')) {
+                // Adjust auto-scroll direction. Usually we want it to go upwards.
+                targetTranslateY += AUTO_SCROLL_SPEED;
+            }
+
+            // Because there are two identical sets of projects, exactly half the height represents one set
+            const halfHeight = typoTrack.scrollHeight / 2;
+
+            // Infinite loop handling
+            if (targetTranslateY > halfHeight) {
+                targetTranslateY -= halfHeight;
+                currentTranslateY -= halfHeight;
+            } else if (targetTranslateY < 0) {
+                targetTranslateY += halfHeight;
+                currentTranslateY += halfHeight;
+            }
+
+            // Smooth interpolation (lerp)
+            currentTranslateY += (targetTranslateY - currentTranslateY) * 0.1;
+
+            typoTrack.style.transform = `rotate(-12deg) translateY(-${currentTranslateY}px)`;
+            requestAnimationFrame(animTypoScroll);
+        }
+
+        // Wait just a moment for the DOM and styling to fully layout before starting
+        setTimeout(() => {
+            animTypoScroll();
+        }, 100);
+    }
 });

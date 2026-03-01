@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets — Idris Mekidiche</title>
+    <meta name="description"
+        content="Découvrez les projets réalisés par Idris Mekidiche : applications web, jeux, design et plus.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/tout.css">
+</head>
+
+<body>
+
+    <div id="cursor-spotlight" class="cursor-spotlight"></div>
+
+    <!-- Navigation -->
+    <nav class="nav glass-nav">
+        <div class="nav__container">
+            <div class="nav__flex">
+                <div>
+                    <a href="index.html" class="nav__logo">Idris Mekidiche</a>
+                </div>
+                <div class="nav__links">
+                    <a href="about.html" class="nav__link">À propos</a>
+                    <a href="skills.html" class="nav__link">Compétences</a>
+                    <a href="projects.html" class="nav__link nav__link--active">Projets</a>
+                    <a href="experience.html" class="nav__link">Parcours</a>
+                    <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__cta">Me contacter</a>
+                    <button id="theme-toggle" class="nav__theme-btn">
+                        <i class="ph ph-moon icon-moon"></i>
+                        <i class="ph ph-sun icon-sun"></i>
+                    </button>
+                </div>
+                <div class="nav__mobile-controls">
+                    <button id="theme-toggle-mobile" class="nav__theme-btn">
+                        <i class="ph ph-moon icon-moon"></i>
+                        <i class="ph ph-sun icon-sun"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="nav__hamburger">
+                        <i class="ph ph-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="nav__mobile-menu">
+            <div class="nav__mobile-menu-inner">
+                <a href="about.html" class="nav__mobile-link">À propos</a>
+                <a href="skills.html" class="nav__mobile-link">Compétences</a>
+                <a href="projects.html" class="nav__mobile-link">Projets</a>
+                <a href="experience.html" class="nav__mobile-link">Parcours</a>
+                <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__mobile-cta">Me contacter</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects page-section">
+        <div class="container">
+            <div class="projects__header" data-aos="fade-in">
+                <div>
+                    <h2 class="section-title">Projets Réalisés</h2>
+                </div>
+                <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank" class="projects__github-link">
+                    Mon GitHub <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="projects__grid" data-aos="fade-up">
+                <div class="project-card project-card--blue" data-index="0">
+                    <div class="project-card__image"><img src="img/DashMed.png" alt="DashMed"></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--blue"><i class="ph ph-desktop"></i>
+                            Application Desktop</div>
+                        <h3 class="project-card__title">DashMed</h3>
+                        <p class="project-card__desc">Un dashboard médical complet conçu pour simplifier la gestion des
+                            patients.</p>
+                    </div>
+                </div>
+
+                <div class="project-card project-card--red" data-index="1">
+                    <div class="project-card__image project-card__image--white-bg project-card__image--contain"><img
+                            src="img/SuperBomberman.png" alt="Bomberman Clone"></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--red"><i
+                                class="ph ph-game-controller"></i> Jeu Vidéo</div>
+                        <h3 class="project-card__title">Bomberman Clone</h3>
+                        <p class="project-card__desc">Recréer ce classique m'a permis de plonger dans la logique
+                            algorithmique complexe.</p>
+                    </div>
+                </div>
+
+                <div class="project-card project-card--green" data-index="2">
+                    <div
+                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
+                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13"></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--green"><i class="ph ph-globe"></i>
+                            E-commerce &amp; Web</div>
+                        <h3 class="project-card__title">Direct Rénove 13</h3>
+                        <p class="project-card__desc">Site vitrine professionnel pour une entreprise de rénovation.</p>
+                    </div>
+                </div>
+
+                <div class="project-card project-card--purple" data-index="3">
+                    <div class="project-card__image project-card__image--dark-bg"><i
+                            class="project-card__icon-placeholder ph ph-paint-brush-broad"></i></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--purple"><i class="ph ph-pen-nib"></i>
+                            Branding &amp; Design</div>
+                        <h3 class="project-card__title">MAJIK Esports</h3>
+                        <p class="project-card__desc">Création d'identités visuelles fortes. Logos, animations et
+                            organisation d'un tournoi.</p>
+                    </div>
+                </div>
+
+                <div class="project-card project-card--indigo" data-index="4">
+                    <div class="project-card__image"><img src="img/nas.png" alt="Nas"></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--indigo"><i
+                                class="ph ph-ordinateur"></i> Nas</div>
+                        <h3 class="project-card__title">Création d'un Nas</h3>
+                        <p class="project-card__desc">Mise en place d'un serveur NAS personnalisé pour la gestion et le
+                            stockage sécurisé.</p>
+                    </div>
+                </div>
+
+                <div class="project-card project-card--amber" data-index="5">
+                    <div
+                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
+                        <img src="img/figma_aix.png" alt="Figma Aix"></div>
+                    <div class="project-card__body">
+                        <div class="project-card__category project-card__category--amber"><i
+                                class="ph ph-figma-logo"></i> UX/UI &amp; Design</div>
+                        <h3 class="project-card__title">Circuit Touristique Aix</h3>
+                        <p class="project-card__desc">Conception en groupe d'une interface d'application inclusive pour
+                            découvrir Aix-en-Provence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Experiences -->
+            <div class="projects__other">
+                <h3 class="projects__other-title">Autres Expériences Web</h3>
+                <div class="projects__other-grid">
+                    <div class="projects__other-card project-card" data-index="6" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <img src="img/Valorant.png" alt="Valorant">
+                        <div>
+                            <h4>Fan Site Valorant</h4>
+                            <p>Exploration des animations CSS et des interactions dynamiques.</p>
+                            <span class="projects__other-tech">HTML • CSS • JS</span>
+                        </div>
+                        <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
+                            class="projects__other-link">Le site</a>
+                    </div>
+                    <div class="projects__other-card project-card" data-index="7" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <img src="img/tester_les_pixel.png" alt="Testeur de pixel">
+                        <div>
+                            <h4>Site testeur de pixel</h4>
+                            <p>Création d'un site pour pouvoir tester les écrant qui ma aider pour la répartion d'écran
+                                d'ordinateur</p>
+                            <span class="projects__other-tech">HTML • CSS • JS</span>
+                        </div>
+                        <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
+                            class="projects__other-link">Le site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__text">© Idris Mekidiche.</p>
+    </footer>
+
+    <!-- Fullscreen Swiper Lightbox (Modal) -->
+    <div id="project-modal" class="modal">
+        <div class="modal__backdrop" id="modal-backdrop"></div>
+        <button id="modal-close" class="modal__close"><i class="ph ph-x"></i></button>
+        <div class="modal__content" id="modal-content">
+            <div class="swiper projects-swiper modal__swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image"><img src="img/DashMed.png" alt="DashMed"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--blue"><i class="ph ph-desktop"></i>
+                                Application Desktop</div>
+                            <h3 class="modal__slide-title">DashMed</h3>
+                            <p class="modal__slide-desc">Un dashboard médical complet conçu pour simplifier la gestion
+                                des patients. J'ai voulu créer une interface qui soit non seulement fonctionnelle mais
+                                aussi apaisante visuellement pour le personnel médical.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">PHP</span><span
+                                    class="modal__slide-tag">SQL</span></div>
+                            <div class="modal__slide-cta"><a href="https://dashmed.alwaysdata.net/?page=homepage"
+                                    target="_blank" class="modal__slide-btn">Voir le site <i
+                                        class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border"><img src="img/SuperBomberman.png"
+                                alt="Bomberman Clone"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--red"><i
+                                    class="ph ph-game-controller"></i> Jeu Vidéo</div>
+                            <h3 class="modal__slide-title">Bomberman Clone</h3>
+                            <p class="modal__slide-desc">Recréer ce classique m'a permis de plonger dans la logique
+                                algorithmique complexe : gestion des collisions, IA des ennemis et génération
+                                procédurale de niveaux. Un vrai challenge technique.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">Java</span><span
+                                    class="modal__slide-tag">JavaFX</span><span
+                                    class="modal__slide-tag">Algorithmique</span></div>
+                            <div class="modal__slide-cta"><a
+                                    href="https://github.com/BOUDHIB-Mohame-Amine-24006551/SuperBomberman"
+                                    target="_blank" class="modal__slide-btn">Voir le site <i
+                                        class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border"><img src="img/DirectRénove13.png"
+                                alt="Direct Rénove 13"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--green"><i class="ph ph-globe"></i>
+                                E-commerce &amp; Web</div>
+                            <h3 class="modal__slide-title">Direct Rénove 13</h3>
+                            <p class="modal__slide-desc">Site vitrine professionnel pour une entreprise de rénovation.
+                                J'ai mis l'accent sur une navigation fluide et un design épuré, tout en optimisant les
+                                performances pour une expérience utilisateur optimale.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">HTML/CSS</span><span
+                                    class="modal__slide-tag">JS</span></div>
+                            <div class="modal__slide-cta"><a href="https://directrevnov13.alwaysdata.net/"
+                                    target="_blank" class="modal__slide-btn">Visiter le site <i
+                                        class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image">
+                            <div class="modal__slide-icon-wrapper"><i class="ph ph-paint-brush-broad"></i></div>
+                        </div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--purple"><i class="ph ph-pen-nib"></i>
+                                Branding &amp; Design</div>
+                            <h3 class="modal__slide-title">MAJIK Esports</h3>
+                            <p class="modal__slide-desc modal__slide-desc--sm">Au-delà du code, j'aime créer des
+                                identités visuelles fortes. Pour MAJIK, nous avons conçu tout l'univers graphique :
+                                logo, animations afin d'assurer une cohérence totale. Plusieurs classes ont travaillé
+                                sur ce projet et notre groupe a remporté le concours de la meilleure identité visuelle.
+                                Nous avons donc ensuite organisé le tournoi.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">Photoshop</span><span
+                                    class="modal__slide-tag">Communication</span></div>
+                            <div class="modal__slide-cta"><a href="https://majik-esports.netlify.app/" target="_blank"
+                                    class="modal__slide-btn">Lien du site web <i class="ph ph-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image"><img src="img/nas.png" alt="Nas"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--indigo"><i class="ph ph-ordinateur"></i>
+                                Nas</div>
+                            <h3 class="modal__slide-title">Création d'un Nas</h3>
+                            <p class="modal__slide-desc">Mise en place d'un serveur NAS personnalisé pour la gestion et
+                                le stockage sécurisé des données. Utilisation de TrueNas pour une interface intuitive et
+                                CasaOs pour la gestion des applications.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">Tailscale</span><span
+                                    class="modal__slide-tag">TrueNas</span><span class="modal__slide-tag">CasaOs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border"><img src="img/figma_aix.png"
+                                alt="Figma Aix"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--amber"><i class="ph ph-figma-logo"></i>
+                                UX/UI &amp; Design</div>
+                            <h3 class="modal__slide-title">Circuit Touristique Aix</h3>
+                            <p class="modal__slide-desc modal__slide-desc--sm">Conception en groupe d'une interface
+                                d'application inclusive pour découvrir Aix-en-Provence. Le projet se concentre sur
+                                l'accessibilité (PMR, seniors, familles) et propose des itinéraires personnalisés
+                                (culturel, artistique, dynamique) avec une navigation optimisée.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">Figma</span><span
+                                    class="modal__slide-tag">Prototypage</span><span
+                                    class="modal__slide-tag">Accessibilité</span></div>
+                            <div class="modal__slide-cta"><a
+                                    href="https://www.figma.com/proto/Gi9g98YJV9s1erSJUP5i7G/S105--%7C-BARBERIS---HELALI---MEKIDICHE---RATIANANAHARY---STEFANOVITCH---WATRIPONT--Copy-?node-id=4001-851&starting-point-node-id=89%3A83"
+                                    target="_blank" class="modal__slide-btn">Voir la maquette <i
+                                        class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border"><img src="img/Valorant.png"
+                                alt="Fan Site Valorant"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--red"><i class="ph ph-globe"></i> Site Web
+                            </div>
+                            <h3 class="modal__slide-title">Fan Site Valorant</h3>
+                            <p class="modal__slide-desc">Exploration des animations CSS avancées et des interactions
+                                dynamiques au travers d'un site dédié à l'univers de Valorant. Ce projet m'a permis de
+                                perfectionner mes compétences en HTML, CSS et JavaScript.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">HTML</span><span
+                                    class="modal__slide-tag">CSS</span><span class="modal__slide-tag">JavaScript</span>
+                            </div>
+                            <div class="modal__slide-cta"><a
+                                    href="https://mekidiche-idris-24003062.github.io/Site_web/index.html"
+                                    target="_blank" class="modal__slide-btn">Voir le site <i
+                                        class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide modal__slide">
+                        <div class="modal__slide-image modal__slide-image--no-border"><img
+                                src="img/tester_les_pixel.png" alt="Testeur de Pixel"></div>
+                        <div class="modal__slide-info">
+                            <div class="modal__slide-badge modal__slide-badge--blue"><i class="ph ph-monitor"></i> Outil
+                                Web</div>
+                            <h3 class="modal__slide-title">Testeur de Pixel</h3>
+                            <p class="modal__slide-desc">Création d'un outil web permettant de tester les pixels des
+                                écrans, utile pour la réparation d'écrans d'ordinateur. Un projet pratique qui combine
+                                logique JavaScript et manipulation du DOM.</p>
+                            <div class="modal__slide-tags"><span class="modal__slide-tag">HTML</span><span
+                                    class="modal__slide-tag">CSS</span><span class="modal__slide-tag">JavaScript</span>
+                            </div>
+                            <div class="modal__slide-cta"><a
+                                    href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
+                                    class="modal__slide-btn">Voir le site <i class="ph ph-arrow-up-right"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/tout.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 
 <head>
     <!-- HTML Meta Tags -->
@@ -28,15 +28,13 @@
     <meta name="twitter:image"
         content="https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-cv-icon-png-image_1025256.jpg">
 
-    <!-- Meta Tags Generated via https://opengraph.dev -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idris Mekidiche | Développeur Web & Étudiant</title>
+    <title>Idris Mekidiche | Développeur Web &amp; Étudiant</title>
     <meta name="description"
         content="Portfolio d'Idris Mekidiche, étudiant en BUT Informatique et développeur web passionné.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/tout.css">
 </head>
@@ -58,15 +56,15 @@
         <div class="nav__container">
             <div class="nav__flex">
                 <div>
-                    <a href="#" class="nav__logo">Idris Mekidiche</a>
+                    <a href="index.html" class="nav__logo">Idris Mekidiche</a>
                 </div>
 
                 <!-- Desktop Links -->
                 <div class="nav__links">
-                    <a href="#about" class="nav__link">À propos</a>
-                    <a href="#skills" class="nav__link">Compétences</a>
-                    <a href="#projects" class="nav__link">Projets</a>
-                    <a href="#experience" class="nav__link">Parcours</a>
+                    <a href="about.html" class="nav__link">À propos</a>
+                    <a href="skills.html" class="nav__link">Compétences</a>
+                    <a href="projects.html" class="nav__link">Projets</a>
+                    <a href="experience.html" class="nav__link">Parcours</a>
                     <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__cta">
                         Me contacter
                     </a>
@@ -92,10 +90,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="nav__mobile-menu">
             <div class="nav__mobile-menu-inner">
-                <a href="#about" class="nav__mobile-link">À propos</a>
-                <a href="#skills" class="nav__mobile-link">Compétences</a>
-                <a href="#projects" class="nav__mobile-link">Projets</a>
-                <a href="#experience" class="nav__mobile-link">Parcours</a>
+                <a href="about.html" class="nav__mobile-link">À propos</a>
+                <a href="skills.html" class="nav__mobile-link">Compétences</a>
+                <a href="projects.html" class="nav__mobile-link">Projets</a>
+                <a href="experience.html" class="nav__mobile-link">Parcours</a>
                 <a href="mailto:idris.mekidiche@gmail.com" target="_blank" class="nav__mobile-cta">Me contacter</a>
             </div>
         </div>
@@ -104,18 +102,69 @@
     <!-- Hero Section -->
     <section class="hero hero--vanholtz">
 
-        <!-- Rotating project names as background decoration -->
-        <div class="hero__typo-bg" aria-hidden="true">
+        <!-- Rotating project names as interactive background -->
+        <div class="hero__typo-bg">
             <div class="hero__typo-track">
-                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up"
-                    data-aos-delay="200">/DASHMED</span>
-                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="400">BOMBERMAN</span>
-                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up" data-aos-delay="600">/DIRECT
-                    RÉNOVE</span>
-                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="800">MAJIK</span>
-                <span class="hero__typo-name hero__typo-name--outline" data-aos="fade-up"
-                    data-aos-delay="1000">/VALORANT</span>
-                <span class="hero__typo-name" data-aos="fade-up" data-aos-delay="1200">PIXEL TEST</span>
+                <!-- Original Set -->
+                <a href="projects.html?p=0" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/DashMed.png"
+                    data-preview-desc="Dashboard médical complet conçu pour simplifier la gestion des patients."
+                    data-preview-year="2024" data-preview-tags="PHP • SQL">/DASHMED</a>
+                <a href="projects.html?p=1" class="hero__typo-name" data-preview-img="img/SuperBomberman.png"
+                    data-preview-desc="Recréer ce classique m'a permis de plonger dans l'algorithmique."
+                    data-preview-year="2024" data-preview-tags="Java • JavaFX">BOMBERMAN</a>
+                <a href="projects.html?p=2" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/DirectRénove13.png"
+                    data-preview-desc="Site vitrine professionnel pour une entreprise de rénovation."
+                    data-preview-year="2023" data-preview-tags="HTML • CSS">/DIRECT RÉNOVE</a>
+                <a href="projects.html?p=3" class="hero__typo-name" data-preview-img="img/portfolio_preview.webp"
+                    data-preview-desc="Création d'identités visuelles fortes. Logos et animations."
+                    data-preview-year="2024" data-preview-tags="Design • Event">MAJIK</a>
+                <a href="projects.html?p=6" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/Valorant.png"
+                    data-preview-desc="Exploration des animations CSS et interactions dynamiques."
+                    data-preview-year="2024" data-preview-tags="HTML • JS">/VALORANT</a>
+                <a href="projects.html?p=7" class="hero__typo-name" data-preview-img="img/tester_les_pixel.png"
+                    data-preview-desc="Création d'un site utile pour la répartition d'écran d'ordinateur."
+                    data-preview-year="2024" data-preview-tags="Outils • Web">PIXEL TEST</a>
+
+                <!-- Duplicate Set for Seamless Scrolling -->
+                <a href="projects.html?p=0" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/DashMed.png"
+                    data-preview-desc="Dashboard médical complet conçu pour simplifier la gestion des patients."
+                    data-preview-year="2024" data-preview-tags="PHP • SQL">/DASHMED</a>
+                <a href="projects.html?p=1" class="hero__typo-name" data-preview-img="img/SuperBomberman.png"
+                    data-preview-desc="Recréer ce classique m'a permis de plonger dans l'algorithmique."
+                    data-preview-year="2024" data-preview-tags="Java • JavaFX">BOMBERMAN</a>
+                <a href="projects.html?p=2" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/DirectRénove13.png"
+                    data-preview-desc="Site vitrine professionnel pour une entreprise de rénovation."
+                    data-preview-year="2023" data-preview-tags="HTML • CSS">/DIRECT RÉNOVE</a>
+                <a href="projects.html?p=3" class="hero__typo-name" data-preview-img="img/portfolio_preview.webp"
+                    data-preview-desc="Création d'identités visuelles fortes. Logos et animations."
+                    data-preview-year="2024" data-preview-tags="Design • Event">MAJIK</a>
+                <a href="projects.html?p=6" class="hero__typo-name hero__typo-name--outline"
+                    data-preview-img="img/Valorant.png"
+                    data-preview-desc="Exploration des animations CSS et interactions dynamiques."
+                    data-preview-year="2024" data-preview-tags="HTML • JS">/VALORANT</a>
+                <a href="projects.html?p=7" class="hero__typo-name" data-preview-img="img/tester_les_pixel.png"
+                    data-preview-desc="Création d'un site utile pour la répartition d'écran d'ordinateur."
+                    data-preview-year="2024" data-preview-tags="Outils • Web">PIXEL TEST</a>
+            </div>
+        </div>
+
+        <!-- Hover Preview Card -->
+        <div class="hover-preview" id="hover-preview">
+            <div class="hover-preview__image-wrapper">
+                <img id="hover-preview-img" src="" alt="Project Preview">
+            </div>
+            <div class="hover-preview__content">
+                <p class="hover-preview__desc" id="hover-preview-desc"></p>
+                <div class="hover-preview__meta">
+                    <span class="hover-preview__year" id="hover-preview-year"></span>
+                    <span class="hover-preview__tags" id="hover-preview-tags"></span>
+                </div>
+                <div class="hover-preview__author">© Idris Mekidiche</div>
             </div>
         </div>
 
@@ -131,14 +180,14 @@
                     <span class="hero__identity-email">idris.mekidiche@gmail.com</span>
                 </div>
                 <nav class="hero__identity-nav">
-                    <a href="#about" class="hero__identity-nav-link"><span class="hero__identity-nav-num">01</span> à
-                        propos</a>
-                    <a href="#skills" class="hero__identity-nav-link"><span class="hero__identity-nav-num">02</span>
+                    <a href="about.html" class="hero__identity-nav-link"><span class="hero__identity-nav-num">01</span>
+                        à propos</a>
+                    <a href="skills.html" class="hero__identity-nav-link"><span class="hero__identity-nav-num">02</span>
                         compétences</a>
-                    <a href="#projects" class="hero__identity-nav-link"><span class="hero__identity-nav-num">03</span>
-                        projets</a>
-                    <a href="#experience" class="hero__identity-nav-link"><span class="hero__identity-nav-num">04</span>
-                        parcours</a>
+                    <a href="projects.html" class="hero__identity-nav-link"><span
+                            class="hero__identity-nav-num">03</span> projets</a>
+                    <a href="experience.html" class="hero__identity-nav-link"><span
+                            class="hero__identity-nav-num">04</span> parcours</a>
                 </nav>
             </div>
         </div>
@@ -158,641 +207,11 @@
             </div>
         </div>
 
-        <!-- Scroll cue -->
-        <div class="hero__scroll-cue">
-            <a href="#about">
-                <i class="ph ph-caret-down"></i>
-            </a>
-        </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about__grid">
-                <!-- Text Content Column -->
-                <div class="about__text" data-aos="fade-up">
-                    <h3 class="about__heading">Passionné par la technologie et la création</h3>
-                    <p class="about__paragraph">
-                        Actuellement en deuxième année de <strong>BUT Informatique à l'IUT d'Aix-en-Provence</strong>,
-                        je me spécialise dans le développement d'applications web et logiciels. Mon parcours m'a permis
-                        d'explorer aussi bien le backend (Java, PHP, SQL) que le frontend et le design d'interfaces.
-                    </p>
-                    <p class="about__paragraph">
-                        Au-delà du code, je cultive un intérêt fort pour <strong>la création de pc et le
-                            multimédia</strong>. La rigueur apprise dans les arts martiaux et la musculation se reflète
-                        dans ma méthode de travail : disciplinée et persévérante. Je cherche toujours à combiner
-                        esthétique et performance technique.
-                    </p>
-                    <div class="about__hobbies">
-                        <div class="about__hobby-card">
-                            <i class="ph ph-barbell about__hobby-icon about__hobby-icon--primary"></i>
-                            <p class="about__hobby-label">Basketball et musculation</p>
-                        </div>
-                        <div class="about__hobby-card">
-                            <i class="ph ph-video-camera about__hobby-icon about__hobby-icon--purple"></i>
-                            <p class="about__hobby-label">Montage vidéo</p>
-                        </div>
-                        <div class="about__hobby-card">
-                            <i class="ph ph-desktop-tower about__hobby-icon about__hobby-icon--red"></i>
-                            <p class="about__hobby-label">création de pc professionnel</p>
-                        </div>
-                        <div class="about__hobby-card">
-                            <i class="ph ph-camera about__hobby-icon about__hobby-icon--purple"></i>
-                            <p class="about__hobby-label">Photographie</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image Column -->
-                <div class="about__image-col" data-aos="fade-left" data-aos-delay="300">
-                    <div class="about__image-wrapper">
-                        <img src="img/moi_de_dos.JPG" alt="Idris Passion">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="skills__header" data-aos="fade-up">
-                <h2 class="section-title">Compétences Techniques</h2>
-            </div>
-
-            <div class="skills__grid">
-                <!-- Front-end -->
-                <div class="skills__card skills__card--frontend" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skills__card-header">
-                        <i class="ph ph-desktop skills__card-icon skills__card-icon--blue"></i>
-                        <h3 class="skills__card-title">Front-end</h3>
-                    </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                alt="HTML5" />
-                            <span>HTML5 / CSS3</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                alt="JavaScript" />
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                alt="Figma" />
-                            <span>Figma / UI Design</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Back-end -->
-                <div class="skills__card skills__card--backend" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skills__card-header">
-                        <i class="ph ph-database skills__card-icon skills__card-icon--purple"></i>
-                        <h3 class="skills__card-title">Back-end</h3>
-                    </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                                alt="PHP" />
-                            <span>PHP</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                                alt="SQL" />
-                            <span>SQL (MySQL/Postgre)</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                                alt="DevOps" />
-                            <span>DevOps Basique</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Logiciel -->
-                <div class="skills__card skills__card--software" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skills__card-header">
-                        <i class="ph ph-code skills__card-icon skills__card-icon--red"></i>
-                        <h3 class="skills__card-title">Logiciel</h3>
-                    </div>
-                    <div class="skills__list">
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                alt="Java" />
-                            <span>Java / JavaFX</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                alt="C++" />
-                            <span>C++</span>
-                        </div>
-                        <div class="skills__list-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                alt="Python" />
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outils -->
-                <div class="skills__card skills__card--tools" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skills__card-header">
-                        <i class="ph ph-wrench skills__card-icon skills__card-icon--green"></i>
-                        <h3 class="skills__card-title">Outils</h3>
-                    </div>
-                    <div class="skills__tags">
-                        <span class="skills__tag">Git & GitHub</span>
-                        <span class="skills__tag">VS Code</span>
-                        <span class="skills__tag">StarUML</span>
-                        <span class="skills__tag">IntelliJ</span>
-                    </div>
-                    <div class="skills__soft-skills">
-                        <h4 class="skills__soft-title">Soft Skills</h4>
-                        <div class="skills__soft-tags">
-                            <span class="skills__soft-tag">Autonomie</span>
-                            <span class="skills__soft-tag">Travail d'équipe</span>
-                            <span class="skills__soft-tag">Rigueur</span>
-                            <span class="skills__soft-tag">Créativité</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="projects__header" data-aos="fade-in">
-                <div>
-                    <h2 class="section-title">Projets Réalisés</h2>
-                </div>
-                <a href="https://github.com/MEKIDICHE-Idris-24003062" target="_blank" class="projects__github-link">
-                    Mon GitHub <i class="ph ph-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects__grid" data-aos="fade-up">
-                <!-- Card 1 -->
-                <div class="project-card project-card--blue" data-index="0">
-                    <div class="project-card__image">
-                        <img src="img/DashMed.png" alt="DashMed">
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--blue">
-                            <i class="ph ph-desktop"></i> Application Desktop
-                        </div>
-                        <h3 class="project-card__title">DashMed</h3>
-                        <p class="project-card__desc">
-                            Un dashboard médical complet conçu pour simplifier la gestion des patients.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="project-card project-card--red" data-index="1">
-                    <div class="project-card__image project-card__image--white-bg project-card__image--contain">
-                        <img src="img/SuperBomberman.png" alt="Bomberman Clone">
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--red">
-                            <i class="ph ph-game-controller"></i> Jeu Vidéo
-                        </div>
-                        <h3 class="project-card__title">Bomberman Clone</h3>
-                        <p class="project-card__desc">
-                            Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="project-card project-card--green" data-index="2">
-                    <div
-                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
-                        <img src="img/DirectRénove13.png" alt="Direct Rénove 13">
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--green">
-                            <i class="ph ph-globe"></i> E-commerce & Web
-                        </div>
-                        <h3 class="project-card__title">Direct Rénove 13</h3>
-                        <p class="project-card__desc">
-                            Site vitrine professionnel pour une entreprise de rénovation.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="project-card project-card--purple" data-index="3">
-                    <div class="project-card__image project-card__image--dark-bg">
-                        <i class="project-card__icon-placeholder ph ph-paint-brush-broad"></i>
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--purple">
-                            <i class="ph ph-pen-nib"></i> Branding & Design
-                        </div>
-                        <h3 class="project-card__title">MAJIK Esports</h3>
-                        <p class="project-card__desc">
-                            Création d'identités visuelles fortes. Logos, animations et organisation d'un tournoi.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="project-card project-card--indigo" data-index="4">
-                    <div class="project-card__image">
-                        <img src="img/nas.png" alt="Nas">
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--indigo">
-                            <i class="ph ph-ordinateur"></i> Nas
-                        </div>
-                        <h3 class="project-card__title">Création d'un Nas</h3>
-                        <p class="project-card__desc">
-                            Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="project-card project-card--amber" data-index="5">
-                    <div
-                        class="project-card__image project-card__image--white-bg project-card__image--contain project-card__image--padded">
-                        <img src="img/figma_aix.png" alt="Figma Aix">
-                    </div>
-                    <div class="project-card__body">
-                        <div class="project-card__category project-card__category--amber">
-                            <i class="ph ph-figma-logo"></i> UX/UI & Design
-                        </div>
-                        <h3 class="project-card__title">Circuit Touristique Aix</h3>
-                        <p class="project-card__desc">
-                            Conception en groupe d'une interface d'application inclusive pour découvrir Aix-en-Provence.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Other Experiences -->
-            <div class="projects__other">
-                <h3 class="projects__other-title">Autres Expériences Web</h3>
-                <div class="projects__other-grid">
-                    <div class="projects__other-card project-card" data-index="6" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <img src="img/Valorant.png" alt="Valorant">
-                        <div>
-                            <h4>Fan Site Valorant</h4>
-                            <p>Exploration des animations CSS et des interactions dynamiques.</p>
-                            <span class="projects__other-tech">HTML • CSS • JS</span>
-                        </div>
-                        <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
-                            class="projects__other-link">
-                            Le site
-                        </a>
-                    </div>
-                    <div class="projects__other-card project-card" data-index="7" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <img src="img/tester_les_pixel.png" alt="Testeur de pixel">
-                        <div>
-                            <h4>Site testeur de pixel</h4>
-                            <p>Création d'un site pour pouvoir tester les écrant qui ma aider pour la répartion d'écran
-                                d'ordinateur</p>
-                            <span class="projects__other-tech">HTML • CSS • JS</span>
-                        </div>
-                        <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
-                            class="projects__other-link">
-                            Le site
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container--narrow">
-            <h2 class="experience__title" data-aos="fade-up">Parcours & Expériences</h2>
-
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline__item" data-aos="fade-up">
-                    <div class="timeline__dot timeline__dot--primary">
-                        <i class="ph ph-student"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">BUT Informatique</div>
-                            <time class="timeline__content-date">2024 - Présent</time>
-                        </div>
-                        <div class="timeline__content-subtitle">IUT d'Aix-en-Provence</div>
-                        <div class="timeline__content-desc">
-                            Apprentissage intensif : Algorithmique, Développement Web, Bases de données, Programmation
-                            orientée objet.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline__item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline__dot timeline__dot--indigo">
-                        <i class="ph ph-hand-heart"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">Bénévolat</div>
-                            <time class="timeline__content-date">2022 - Présent</time>
-                        </div>
-                        <div class="timeline__content-desc">
-                            Participation à des maraudes et événements culturels. Développement du sens de l'empathie et
-                            de la gestion humaine.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="timeline__item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline__dot timeline__dot--slate">
-                        <i class="ph ph-briefcase"></i>
-                    </div>
-                    <div class="timeline__content">
-                        <div class="timeline__content-header">
-                            <div class="timeline__content-title">Stage - Rénovation</div>
-                            <time class="timeline__content-date timeline__content-date--muted">2023</time>
-                        </div>
-                        <div class="timeline__content-subtitle">Société de bâtiment</div>
-                        <div class="timeline__content-desc">
-                            Découverte du monde professionnel, travail en équipe sur chantier et premiers pas dans la
-                            création du site vitrine de l'entreprise.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p class="footer__text">
-            © Idris Mekidiche.
-        </p>
-    </footer>
-
-    <!-- Fullscreen Swiper Lightbox (Modal) -->
-    <div id="project-modal" class="modal">
-        <div class="modal__backdrop" id="modal-backdrop"></div>
-
-        <button id="modal-close" class="modal__close">
-            <i class="ph ph-x"></i>
-        </button>
-
-        <div class="modal__content" id="modal-content">
-            <div class="swiper projects-swiper modal__swiper">
-                <div class="swiper-wrapper">
-
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image">
-                            <img src="img/DashMed.png" alt="DashMed">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--blue">
-                                <i class="ph ph-desktop"></i> Application Desktop
-                            </div>
-                            <h3 class="modal__slide-title">DashMed</h3>
-                            <p class="modal__slide-desc">
-                                Un dashboard médical complet conçu pour simplifier la gestion des patients. J'ai voulu
-                                créer une interface qui soit non seulement fonctionnelle mais aussi apaisante
-                                visuellement pour le personnel médical.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">PHP</span>
-                                <span class="modal__slide-tag">SQL</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://dashmed.alwaysdata.net/?page=homepage" target="_blank"
-                                    class="modal__slide-btn">
-                                    Voir le site <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image modal__slide-image--no-border">
-                            <img src="img/SuperBomberman.png" alt="Bomberman Clone">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--red">
-                                <i class="ph ph-game-controller"></i> Jeu Vidéo
-                            </div>
-                            <h3 class="modal__slide-title">Bomberman Clone</h3>
-                            <p class="modal__slide-desc">
-                                Recréer ce classique m'a permis de plonger dans la logique algorithmique complexe :
-                                gestion des collisions, IA des ennemis et génération procédurale de niveaux. Un vrai
-                                challenge technique.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">Java</span>
-                                <span class="modal__slide-tag">JavaFX</span>
-                                <span class="modal__slide-tag">Algorithmique</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://github.com/BOUDHIB-Mohame-Amine-24006551/SuperBomberman"
-                                    target="_blank" class="modal__slide-btn">
-                                    Voir le site <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image modal__slide-image--no-border">
-                            <img src="img/DirectRénove13.png" alt="Direct Rénove 13">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--green">
-                                <i class="ph ph-globe"></i> E-commerce & Web
-                            </div>
-                            <h3 class="modal__slide-title">Direct Rénove 13</h3>
-                            <p class="modal__slide-desc">
-                                Site vitrine professionnel pour une entreprise de rénovation. J'ai mis l'accent sur une
-                                navigation fluide et un design épuré, tout en optimisant les performances pour une
-                                expérience utilisateur optimale.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">HTML/CSS</span>
-                                <span class="modal__slide-tag">JS</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://directrevnov13.alwaysdata.net/" target="_blank"
-                                    class="modal__slide-btn">
-                                    Visiter le site <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image">
-                            <div class="modal__slide-icon-wrapper">
-                                <i class="ph ph-paint-brush-broad"></i>
-                            </div>
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--purple">
-                                <i class="ph ph-pen-nib"></i> Branding & Design
-                            </div>
-                            <h3 class="modal__slide-title">MAJIK Esports</h3>
-                            <p class="modal__slide-desc modal__slide-desc--sm">
-                                Au-delà du code, j'aime créer des identités visuelles fortes. Pour MAJIK, nous avons
-                                conçu tout l'univers graphique : logo, animations afin d'assurer une cohérence totale.
-                                Plusieurs classes ont travaillé sur ce projet et notre groupe a remporté le concours de
-                                la meilleure identité visuelle. Nous avons donc ensuite organisé le tournoi.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">Photoshop</span>
-                                <span class="modal__slide-tag">Communication</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://majik-esports.netlify.app/" target="_blank" class="modal__slide-btn">
-                                    Lien du site web <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image">
-                            <img src="img/nas.png" alt="Nas">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--indigo">
-                                <i class="ph ph-ordinateur"></i> Nas
-                            </div>
-                            <h3 class="modal__slide-title">Création d'un Nas</h3>
-                            <p class="modal__slide-desc">
-                                Mise en place d'un serveur NAS personnalisé pour la gestion et le stockage sécurisé des
-                                données. Utilisation de TrueNas pour une interface intuitive et CasaOs pour la gestion
-                                des applications.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">Tailscale</span>
-                                <span class="modal__slide-tag">TrueNas</span>
-                                <span class="modal__slide-tag">CasaOs</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6 -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image modal__slide-image--no-border">
-                            <img src="img/figma_aix.png" alt="Figma Aix">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--amber">
-                                <i class="ph ph-figma-logo"></i> UX/UI & Design
-                            </div>
-                            <h3 class="modal__slide-title">Circuit Touristique Aix</h3>
-                            <p class="modal__slide-desc modal__slide-desc--sm">
-                                Conception en groupe d'une interface d'application inclusive pour découvrir
-                                Aix-en-Provence. Le projet se concentre sur l'accessibilité (PMR, seniors, familles) et
-                                propose des itinéraires personnalisés (culturel, artistique, dynamique) avec une
-                                navigation optimisée.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">Figma</span>
-                                <span class="modal__slide-tag">Prototypage</span>
-                                <span class="modal__slide-tag">Accessibilité</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://www.figma.com/proto/Gi9g98YJV9s1erSJUP5i7G/S105--%7C-BARBERIS---HELALI---MEKIDICHE---RATIANANAHARY---STEFANOVITCH---WATRIPONT--Copy-?node-id=4001-851&starting-point-node-id=89%3A83"
-                                    target="_blank" class="modal__slide-btn">
-                                    Voir la maquette <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 - Fan Site Valorant -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image modal__slide-image--no-border">
-                            <img src="img/Valorant.png" alt="Fan Site Valorant">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--red">
-                                <i class="ph ph-globe"></i> Site Web
-                            </div>
-                            <h3 class="modal__slide-title">Fan Site Valorant</h3>
-                            <p class="modal__slide-desc">
-                                Exploration des animations CSS avancées et des interactions dynamiques au travers d'un
-                                site dédié à l'univers de Valorant. Ce projet m'a permis de perfectionner mes
-                                compétences en HTML, CSS et JavaScript.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">HTML</span>
-                                <span class="modal__slide-tag">CSS</span>
-                                <span class="modal__slide-tag">JavaScript</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://mekidiche-idris-24003062.github.io/Site_web/index.html" target="_blank"
-                                    class="modal__slide-btn">
-                                    Voir le site <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 8 - Testeur de Pixel -->
-                    <div class="swiper-slide modal__slide">
-                        <div class="modal__slide-image modal__slide-image--no-border">
-                            <img src="img/tester_les_pixel.png" alt="Testeur de Pixel">
-                        </div>
-                        <div class="modal__slide-info">
-                            <div class="modal__slide-badge modal__slide-badge--blue">
-                                <i class="ph ph-monitor"></i> Outil Web
-                            </div>
-                            <h3 class="modal__slide-title">Testeur de Pixel</h3>
-                            <p class="modal__slide-desc">
-                                Création d'un outil web permettant de tester les pixels des écrans, utile pour la
-                                réparation d'écrans d'ordinateur. Un projet pratique qui combine logique JavaScript et
-                                manipulation du DOM.
-                            </p>
-                            <div class="modal__slide-tags">
-                                <span class="modal__slide-tag">HTML</span>
-                                <span class="modal__slide-tag">CSS</span>
-                                <span class="modal__slide-tag">JavaScript</span>
-                            </div>
-                            <div class="modal__slide-cta">
-                                <a href="https://mekidiche-idris-24003062.github.io/testeur-de-pixel/" target="_blank"
-                                    class="modal__slide-btn">
-                                    Voir le site <i class="ph ph-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Navigation -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/tout.js"></script>
+
 </body>
 
 </html>
