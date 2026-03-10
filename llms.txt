@@ -1,0 +1,34 @@
+# Idris Mekidiche — Portfolio
+
+> Étudiant en BUT Informatique à l'IUT d'Aix-en-Provence et développeur web passionné.
+> À la recherche d'une alternance en développement web ou logiciel.
+
+## Qui suis-je ?
+
+Je m'appelle Idris Mekidiche. Je suis en deuxième année de BUT Informatique à l'IUT d'Aix-en-Provence.
+Je me spécialise dans le développement d'applications web (front-end et back-end) et logicielles.
+Je suis disponible pour une alternance.
+
+## Compétences techniques
+
+- **Front-end** : HTML5, CSS3, JavaScript
+- **Back-end** : PHP, SQL (MySQL, PostgreSQL)
+- **Logiciel** : Java, JavaFX, C++, Python
+- **Design & UX** : Figma, UI/UX Design
+- **Outils** : Git, GitHub, Docker, VS Code, IntelliJ, StarUML
+
+## Projets principaux
+
+- [Accueil](https://mekidiche-idris-portfolio.com/): Page principale du portfolio
+- [À propos](https://mekidiche-idris-portfolio.com/about.html): Présentation personnelle et centres d'intérêt
+- [Compétences](https://mekidiche-idris-portfolio.com/skills.html): Compétences techniques détaillées
+- [Projets](https://mekidiche-idris-portfolio.com/projects.html): DashMed (PHP/SQL), Bomberman Clone (Java), Direct Rénove 13 (site vitrine), MAJIK Esports (branding), NAS TrueNas, Circuit Touristique Aix (Figma)
+- [Parcours](https://mekidiche-idris-portfolio.com/experience.html): BUT Informatique, stage Direct Rénove 13, bénévolat humanitaire
+- [Création de site](https://mekidiche-idris-portfolio.com/vitrine.html): Offre de création de sites web professionnels, tarifs à partir de 150€
+
+## Contact
+
+- Email : idris.mekidiche@gmail.com
+- LinkedIn : https://www.linkedin.com/in/idris-mekidiche-50582a368/
+- GitHub : https://github.com/MEKIDICHE-Idris-24003062
+- Instagram : https://www.instagram.com/idrismeki/
