@@ -19,12 +19,12 @@ Je suis disponible pour une alternance.
 
 ## Projets principaux
 
-- [Accueil](https://mekidiche-idris-portfolio.com/): Page principale du portfolio
-- [À propos](https://mekidiche-idris-portfolio.com/about.html): Présentation personnelle et centres d'intérêt
-- [Compétences](https://mekidiche-idris-portfolio.com/skills.html): Compétences techniques détaillées
-- [Projets](https://mekidiche-idris-portfolio.com/projects.html): DashMed (PHP/SQL), Bomberman Clone (Java), Direct Rénove 13 (site vitrine), MAJIK Esports (branding), NAS TrueNas, Circuit Touristique Aix (Figma)
-- [Parcours](https://mekidiche-idris-portfolio.com/experience.html): BUT Informatique, stage Direct Rénove 13, bénévolat humanitaire
-- [Création de site](https://mekidiche-idris-portfolio.com/vitrine.html): Offre de création de sites web professionnels, tarifs à partir de 150€
+- [Accueil](https://idrismeki.fr/): Page principale du portfolio
+- [À propos](https://idrismeki.fr/about.html): Présentation personnelle et centres d'intérêt
+- [Compétences](https://idrismeki.fr/skills.html): Compétences techniques détaillées
+- [Projets](https://idrismeki.fr/projects.html): DashMed (PHP/SQL), Bomberman Clone (Java), Direct Rénove 13 (site vitrine), MAJIK Esports (branding), NAS TrueNas, Circuit Touristique Aix (Figma)
+- [Parcours](https://idrismeki.fr/experience.html): BUT Informatique, stage Direct Rénove 13, bénévolat humanitaire
+- [Création de site](https://idrismeki.fr/vitrine.html): Offre de création de sites web professionnels, tarifs à partir de 150€
 
 ## Contact
 

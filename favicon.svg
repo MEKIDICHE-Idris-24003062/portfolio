@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- Code bracket left < -->
+  <path d="M120 256l80-80" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <path d="M120 256l80 80" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <!-- Code bracket right > -->
+  <path d="M392 256l-80-80" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <path d="M392 256l-80 80" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <!-- Letters IM -->
+  <text x="256" y="288" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="200" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-8">IM</text>
+</svg>
