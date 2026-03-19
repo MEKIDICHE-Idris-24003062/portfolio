@@ -1,34 +1,53 @@
 # Idris Mekidiche — Portfolio
 
-> Étudiant en BUT Informatique à l'IUT d'Aix-en-Provence et développeur web passionné.
-> À la recherche d'une alternance en développement web ou logiciel.
+> Développeur web passionné, étudiant en BUT Informatique à l'IUT d'Aix-en-Provence. Spécialisé en PHP, Java, JavaScript, HTML/CSS/SQL. À la recherche d'une alternance.
 
-## Qui suis-je ?
+## À propos
 
-Je m'appelle Idris Mekidiche. Je suis en deuxième année de BUT Informatique à l'IUT d'Aix-en-Provence.
-Je me spécialise dans le développement d'applications web (front-end et back-end) et logicielles.
-Je suis disponible pour une alternance.
-
-## Compétences techniques
-
-- **Front-end** : HTML5, CSS3, JavaScript
-- **Back-end** : PHP, SQL (MySQL, PostgreSQL)
-- **Logiciel** : Java, JavaFX, C++, Python
-- **Design & UX** : Figma, UI/UX Design
-- **Outils** : Git, GitHub, Docker, VS Code, IntelliJ, StarUML
-
-## Projets principaux
-
-- [Accueil](https://idrismeki.fr/): Page principale du portfolio
-- [À propos](https://idrismeki.fr/about.html): Présentation personnelle et centres d'intérêt
-- [Compétences](https://idrismeki.fr/skills.html): Compétences techniques détaillées
-- [Projets](https://idrismeki.fr/projects.html): DashMed (PHP/SQL), Bomberman Clone (Java), Direct Rénove 13 (site vitrine), MAJIK Esports (branding), NAS TrueNas, Circuit Touristique Aix (Figma)
-- [Parcours](https://idrismeki.fr/experience.html): BUT Informatique, stage Direct Rénove 13, bénévolat humanitaire
-- [Création de site](https://idrismeki.fr/vitrine.html): Offre de création de sites web professionnels, tarifs à partir de 150€
-
-## Contact
-
+- Nom : Idris Mekidiche
+- Formation : BUT Informatique (2024 - présent), IUT d'Aix-en-Provence
+- Localisation : Aix-en-Provence, France
 - Email : idris.mekidiche@gmail.com
 - LinkedIn : https://www.linkedin.com/in/idris-mekidiche-50582a368/
 - GitHub : https://github.com/MEKIDICHE-Idris-24003062
-- Instagram : https://www.instagram.com/idrismeki/
+
+## Compétences techniques
+
+- Front-end : HTML5, CSS3, JavaScript
+- Back-end : PHP, SQL (MySQL, PostgreSQL)
+- Langages : Java, JavaFX, C++, Python
+- Design : Figma, UI/UX
+- Outils : Git, GitHub, VS Code, IntelliJ, StarUML, Docker (basique)
+
+## Projets réalisés
+
+- DashMed : Dashboard médical complet en PHP/SQL — https://dashmed.alwaysdata.net/
+- Bomberman Clone : Jeu en Java/JavaFX avec IA et génération procédurale
+- Direct Rénove 13 : Site vitrine pour entreprise de rénovation en HTML/CSS/JS — https://directrevnov13.alwaysdata.net/
+- MAJIK Esports : Identité visuelle complète (logo, animations, organisation de tournoi)
+- Circuit Touristique Aix : Maquette Figma UX/UI inclusive pour découvrir Aix-en-Provence
+- Fan Site Valorant : Exploration d'animations CSS avancées — https://mekidiche-idris-24003062.github.io/Site_web/index.html
+- Testeur de Pixel : Outil web de test d'écran — https://mekidiche-idris-24003062.github.io/testeur-de-pixel/
+- Création d'un NAS : Serveur NAS personnalisé avec TrueNas et CasaOS
+
+## Parcours
+
+- BUT Informatique — IUT d'Aix-en-Provence (2024 - présent)
+- Stage Bâtiment & Numérique — Direct Rénove 13 (2023)
+- Engagement Bénévole — Association Humanitaire & Culturelle (2022 - présent)
+
+## Services proposés
+
+Création de sites web professionnels sur mesure :
+- Site de Présentation : 150€ – 200€ (1 à 3 pages)
+- Création de Site : 300€ (jusqu'à 5 pages)
+- Pack Vitrine Pro : 500€ (jusqu'à 5 pages, animations premium, SEO)
+
+## Pages
+
+- Accueil : https://idrismeki.fr/
+- À propos : https://idrismeki.fr/about.html
+- Compétences : https://idrismeki.fr/skills.html
+- Projets : https://idrismeki.fr/projects.html
+- Parcours : https://idrismeki.fr/experience.html
+- Création de Site : https://idrismeki.fr/vitrine.html
