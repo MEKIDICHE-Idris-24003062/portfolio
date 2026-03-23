@@ -21,13 +21,13 @@
 
 ## Projets réalisés
 
-- DashMed : Dashboard médical complet en PHP/SQL — https://dashmed.alwaysdata.net/
+- DashMed : Dashboard médical complet en PHP/SQL — https://github.com/DashMed-france/DashMed-SAE
 - Bomberman Clone : Jeu en Java/JavaFX avec IA et génération procédurale
 - Direct Rénove 13 : Site vitrine pour entreprise de rénovation en HTML/CSS/JS — https://directrevnov13.alwaysdata.net/
 - MAJIK Esports : Identité visuelle complète (logo, animations, organisation de tournoi)
 - Circuit Touristique Aix : Maquette Figma UX/UI inclusive pour découvrir Aix-en-Provence
-- Fan Site Valorant : Exploration d'animations CSS avancées — https://mekidiche-idris-24003062.github.io/Site_web/index.html
-- Testeur de Pixel : Outil web de test d'écran — https://mekidiche-idris-24003062.github.io/testeur-de-pixel/
+- Fan Site Valorant : Exploration d'animations CSS avancées — https://idrismeki.github.io/Site_web/index.html
+- Testeur de Pixel : Outil web de test d'écran — https://idrismeki.github.io/testeur-de-pixel/
 - Création d'un NAS : Serveur NAS personnalisé avec TrueNas et CasaOS
 
 ## Parcours
